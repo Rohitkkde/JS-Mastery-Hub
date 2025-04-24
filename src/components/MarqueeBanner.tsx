@@ -36,7 +36,7 @@ const MarqueeBanner = () => {
       </div>
 
       {/* Second banner - anti-clockwise rotation */}
-      <div className="w-[150%] -left-[25%] bg-black bg-opacity-100 overflow-hidden py-4 absolute -top-4 -rotate-12 z-0">
+      <div className="w-[150%] -left-[25%] bg-black bg-opacity-100 overflow-hidden py-6 absolute -top-4 -rotate-[9deg] z-0">
         <div className="flex whitespace-nowrap text-white font-sans animate-marquee">
           {/* Duplicate content for seamless looping */}
           {blackContent}
