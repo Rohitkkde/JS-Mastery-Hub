@@ -35,7 +35,7 @@ const MarqueeBanner = () => {
       </div>
 
       {/* Second banner - anti-clockwise rotation */}
-      <div className="w-full bg-black overflow-hidden py-4 absolute top-14 -rotate-3">
+      <div className="w-full bg-black bg-opacity-100 overflow-hidden py-4 absolute top-14 -rotate-3">
         <div className="animate-marquee whitespace-nowrap text-white font-sans flex items-center justify-center">
           <span className="inline-block mx-4 text-3xl font-extrabold">Lifetime access</span>
           <span className="inline-block mx-4 w-[38px] h-[38px]">
