@@ -1,9 +1,8 @@
-
 import React from 'react';
 
 const MarqueeBanner = () => {
   return (
-    <div className="w-full bg-[#F57642] overflow-hidden py-4 absolute -top-2">
+    <div className="w-full bg-[#F57642] overflow-hidden py-4 absolute -top-2 rotate-3">
       <div className="animate-marquee-reverse whitespace-nowrap text-white font-sans">
         <span className="inline-block mx-4 text-3xl font-extrabold">Starts 1 May 2025</span>
         <span className="inline-block mx-4 w-[38px] h-[38px]">
@@ -35,4 +34,3 @@ const MarqueeBanner = () => {
 };
 
 export default MarqueeBanner;
-
