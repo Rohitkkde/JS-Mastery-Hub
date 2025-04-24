@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-sm">
       <div className="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between">
-        <a href="/" className="text-black font-mono text-xl mb-4 md:mb-0">
+        <a href="/" className="text-black font-sans text-lg font-bold mb-4 md:mb-0">
           <span className="text-orange">&lt;</span> javascript-mastery <span className="text-orange">&gt;</span>
         </a>
         
