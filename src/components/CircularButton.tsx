@@ -3,7 +3,7 @@ import React from 'react';
 
 const CircularButton = () => {
   return (
-    <div className="group relative w-24 h-24 cursor-pointer">
+    <div className="group relative w-32 h-32 cursor-pointer">
       <div className="absolute inset-0 bg-blue-dark hover:bg-blue-dark/90 transition-colors rounded-full">
         {/* Center Icon */}
         <div className="absolute inset-0 flex items-center justify-center">
