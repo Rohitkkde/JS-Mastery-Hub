@@ -1,9 +1,7 @@
-
 const Hero = () => {
-  return (
-    <div className="relative min-h-screen pt-20 overflow-hidden">
+  return <div className="relative min-h-screen pt-20 overflow-hidden">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold max-w-4xl mx-auto text-center mt-20 mb-12">
+        <h1 className="text-5xl lg:text-8xl font-bold mx-auto text-center mt-20 mb-12">
           Master <span className="relative inline-block">
             JavaScript
             <div className="absolute top-0 left-0 w-full h-full border-yellow-lemon border-2 rounded-full -rotate-6"></div>
@@ -35,8 +33,6 @@ const Hero = () => {
       <div className="absolute top-20 left-10 text-yellow-mango text-6xl">✦</div>
       <div className="absolute bottom-40 right-10 text-blue-light text-4xl">✦</div>
       <div className="absolute top-1/3 right-20 text-orange text-5xl rotate-45">✦</div>
-    </div>
-  );
+    </div>;
 };
-
 export default Hero;
