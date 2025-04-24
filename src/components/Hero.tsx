@@ -1,7 +1,10 @@
 import React from 'react';
 import CircularButton from './CircularButton';
+import MarqueeBanner from './MarqueeBanner';
+
 const Hero = () => {
-  return <div className="relative min-h-screen pt-20 overflow-hidden">
+  return (
+    <div className="relative min-h-screen pt-20 overflow-hidden">
       <div className="container mx-auto px-4">
         <h1 className="text-5xl lg:text-8xl font-bold mx-auto text-center mt-20 mb-12">
           Master <span className="relative inline-block">
@@ -21,12 +24,16 @@ const Hero = () => {
           </div>
         </div>
 
-        
+        <div className="absolute bottom-0 left-0 right-0">
+          <MarqueeBanner />
+        </div>
 
         <div className="absolute top-20 left-10 text-yellow-mango text-6xl">✦</div>
         <div className="absolute bottom-40 right-10 text-blue-light text-4xl">✦</div>
         <div className="absolute top-1/3 right-20 text-orange text-5xl rotate-45">✦</div>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default Hero;

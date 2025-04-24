@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -35,6 +34,15 @@ export default {
       fontFamily: {
         sans: ["Space Grotesk", "sans-serif"],
         mono: ["IBM Plex Mono", "monospace"],
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        }
+      },
+      animation: {
+        marquee: 'marquee 20s linear infinite',
       },
     },
   },
