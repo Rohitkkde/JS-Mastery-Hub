@@ -3,7 +3,7 @@ import React from 'react';
 const MarqueeBanner = () => {
   return (
     <div className="w-full bg-[#F57642] overflow-hidden py-4 absolute -top-2 rotate-3">
-      <div className="animate-marquee-reverse whitespace-nowrap text-white font-sans">
+      <div className="animate-marquee-reverse whitespace-nowrap text-white font-sans flex items-center justify-center">
         <span className="inline-block mx-4 text-3xl font-extrabold">Starts 1 May 2025</span>
         <span className="inline-block mx-4 w-[38px] h-[38px]">
           <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
