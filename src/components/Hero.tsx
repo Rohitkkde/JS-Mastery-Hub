@@ -16,8 +16,12 @@ const Hero = () => {
         </h1>
 
         <div className="relative">
-          <div className="animate-float mx-auto w-32 h-32 md:w-48 md:h-48 bg-yellow-lemon rounded-lg flex items-center justify-center">
-            <span className="text-4xl md:text-6xl font-bold">JS</span>
+          <div className="mx-auto w-32 h-32 md:w-48 md:h-48 relative">
+            <img 
+              src="/lovable-uploads/fd62cf28-89ed-4091-9d2c-177436cf58c8.png" 
+              alt="JavaScript Logo"
+              className="w-full h-full object-contain animate-float"
+            />
             <div className="absolute -top-6 -right-6">
               <CircularButton />
             </div>
@@ -44,3 +48,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
