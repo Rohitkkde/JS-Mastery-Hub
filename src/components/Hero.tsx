@@ -4,7 +4,7 @@ import MarqueeBanner from './MarqueeBanner';
 const Hero = () => {
   return <div className="relative min-h-screen pt-20 overflow-hidden">
       <div className="container mx-auto px-4">
-        <h1 className="lg:text-9xl font-bold mx-auto text-center mt-20 mb-12 text-5xl">
+        <h1 className="lg:text-8xl font-bold mx-auto text-center mt-20 mb-12 text-5xl">
           Master <span className="relative inline-block">
             JavaScript
             <svg width="561" height="178" viewBox="0 0 561 178" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] -z-10">
