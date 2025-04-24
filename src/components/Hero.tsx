@@ -1,13 +1,10 @@
-
 import React from 'react';
 import CircularButton from './CircularButton';
 import MarqueeBanner from './MarqueeBanner';
-
 const Hero = () => {
-  return (
-    <div className="relative min-h-screen pt-20 overflow-hidden">
+  return <div className="relative min-h-screen pt-20 overflow-hidden">
       <div className="container mx-auto px-4">
-        <h1 className="text-5xl lg:text-8xl font-bold mx-auto text-center mt-20 mb-12">
+        <h1 className="lg:text-9xl font-bold mx-auto text-center mt-20 mb-12 text-5xl">
           Master <span className="relative inline-block">
             JavaScript
             <svg width="561" height="178" viewBox="0 0 561 178" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] -z-10">
@@ -18,11 +15,7 @@ const Hero = () => {
 
         <div className="relative mb-20">
           <div className="mx-auto w-48 h-48 md:w-64 md:h-64 relative">
-            <img 
-              src="/lovable-uploads/fd62cf28-89ed-4091-9d2c-177436cf58c8.png" 
-              alt="JavaScript Logo" 
-              className="w-full h-full object-contain animate-float" 
-            />
+            <img src="/lovable-uploads/fd62cf28-89ed-4091-9d2c-177436cf58c8.png" alt="JavaScript Logo" className="w-full h-full object-contain animate-float" />
             <div className="absolute -top-6 -right-6">
               <CircularButton />
             </div>
@@ -37,9 +30,6 @@ const Hero = () => {
         <div className="absolute bottom-40 right-10 text-blue-light text-4xl">✦</div>
         <div className="absolute top-1/3 right-20 text-orange text-5xl rotate-45">✦</div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Hero;
-
