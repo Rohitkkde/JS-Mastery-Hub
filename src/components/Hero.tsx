@@ -15,7 +15,7 @@ const Hero = () => {
           </span> From Scratch to Expert
         </h1>
 
-        <div className="relative">
+        <div className="relative mb-20">
           <div className="mx-auto w-32 h-32 md:w-48 md:h-48 relative">
             <img src="/lovable-uploads/fd62cf28-89ed-4091-9d2c-177436cf58c8.png" alt="JavaScript Logo" className="w-full h-full object-contain animate-float" />
             <div className="absolute -top-6 -right-6">
@@ -24,7 +24,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0">
+        <div className="relative">
           <MarqueeBanner />
         </div>
 
