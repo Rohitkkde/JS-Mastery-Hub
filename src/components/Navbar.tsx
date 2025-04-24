@@ -14,7 +14,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
             <a key={item} href={`#${item.toLowerCase().replace(" ", "-")}`} 
-               className="font-mono text-xs hover:text-blue-dark transition-colors">
+               className="font-sans text-[0.8rem] font-bold hover:text-blue-dark transition-colors">
               {item}
             </a>
           ))}
