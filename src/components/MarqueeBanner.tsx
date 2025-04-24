@@ -1,8 +1,9 @@
 import React from 'react';
+
 const MarqueeBanner = () => {
   return <div className="relative">
       {/* First banner - clockwise rotation */}
-      <div className="w-full bg-[#F57642] overflow-hidden py-4 absolute -top-2 rotate-12 z-10">
+      <div className="w-[150%] -left-[25%] bg-[#F57642] overflow-hidden py-4 absolute -top-2 rotate-12 z-10">
         <div className="animate-marquee-reverse whitespace-nowrap text-white font-sans flex items-center justify-center">
           <span className="inline-block mx-4 text-3xl font-extrabold">Starts 1 May 2025</span>
           <span className="inline-block mx-4 w-[38px] h-[38px]">
@@ -32,7 +33,7 @@ const MarqueeBanner = () => {
       </div>
 
       {/* Second banner - anti-clockwise rotation */}
-      <div className="w-full bg-black bg-opacity-100 overflow-hidden py-4 absolute -top-4 -rotate-12 z-0">
+      <div className="w-[150%] -left-[25%] bg-black bg-opacity-100 overflow-hidden py-4 absolute -top-4 -rotate-12 z-0">
         <div className="animate-marquee whitespace-nowrap text-white font-sans flex items-center justify-center">
           <span className="inline-block mx-4 text-3xl font-extrabold">Lifetime access</span>
           <span className="inline-block mx-4 w-[38px] h-[38px]">
@@ -56,4 +57,5 @@ const MarqueeBanner = () => {
       </div>
     </div>;
 };
+
 export default MarqueeBanner;
