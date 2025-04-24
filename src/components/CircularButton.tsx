@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const CircularButton = () => {
@@ -27,7 +28,7 @@ const CircularButton = () => {
         <svg className="absolute inset-0 w-full h-full text-white" viewBox="0 0 100 100">
           <path id="curve" fill="none" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
           <text className="text-[14px] uppercase font-mono tracking-[1px] fill-white">
-            <textPath href="#curve" startOffset="10%" textLength="80%" lengthAdjust="spacing">
+            <textPath href="#curve" startOffset="5%">
               Enroll Now • Enroll Now •
             </textPath>
           </text>
