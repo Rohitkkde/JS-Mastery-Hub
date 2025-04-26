@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent } from "./ui/card";
+import { Chrome } from "lucide-react";
 
 const projects = [
   {
@@ -39,26 +40,31 @@ const ProjectsSection = () => {
           {projects.map((project, index) => (
             <Card 
               key={index} 
-              className="w-[50vw] bg-white/10 backdrop-blur-sm border-0 hover:translate-y-[-8px] transition-transform duration-300"
+              className="w-[50vw] bg-white/10 backdrop-blur-sm border-0 hover:translate-y-[-8px] transition-transform duration-300 relative"
             >
-              <CardContent className="p-12">
-                <div className="flex justify-between items-start mb-8">
-                  <span className="text-6xl font-mono text-white/30">{project.number}</span>
+              <CardContent className="p-16">
+                <div className="absolute top-6 right-6 bg-orange text-white px-4 py-2 rounded-full flex items-center gap-2">
+                  <Chrome className="w-4 h-4" />
+                  <span className="text-sm font-medium">Chrome Extension</span>
+                </div>
+                
+                <div className="flex justify-between items-start mb-10">
+                  <span className="text-7xl font-mono text-white/20">{project.number}</span>
                   <img 
                     src={`https://images.unsplash.com/${project.image}?auto=format&fit=crop&w=800&q=80`}
                     alt={project.title}
-                    className="w-20 h-20 object-cover rounded-xl"
+                    className="w-24 h-24 object-cover rounded-2xl"
                   />
                 </div>
                 
-                <h3 className="text-3xl font-bold mb-4">{project.title}</h3>
-                <p className="text-white/70 mb-8 text-lg leading-relaxed">{project.description}</p>
+                <h3 className="text-4xl font-bold mb-6">{project.title}</h3>
+                <p className="text-white/70 mb-10 text-lg leading-relaxed max-w-2xl">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-3">
                   {project.tags.map((tag, i) => (
                     <span 
                       key={i}
-                      className="px-4 py-2 bg-white/20 rounded-full text-sm font-medium"
+                      className="px-5 py-2.5 bg-white/10 rounded-full text-sm font-medium"
                     >
                       {tag}
                     </span>
