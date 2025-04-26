@@ -45,11 +45,11 @@ const CommunityVoices = () => {
             dragFree: true,
             containScroll: false,
           }}
-          className="w-full"
+          className="w-full group"
         >
-          <CarouselContent className="flex animate-carousel">
+          <CarouselContent className="flex animate-carousel group-hover:pause">
             {[...testimonials, ...testimonials].map((testimonial, index) => (
-              <div key={index} className="flex flex-col items-center hover:pause">
+              <div key={index} className="flex flex-col items-center">
                 <CarouselItem className="md:basis-[600px] pl-8">
                   <div className={`${testimonial.bgColor} p-12 rounded-3xl min-h-[250px]`}>
                     <blockquote className="text-xl font-medium">
