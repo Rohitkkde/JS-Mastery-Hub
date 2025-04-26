@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card } from './ui/card';
+import { Gift } from 'lucide-react';
 
 const FeaturesSection = () => {
   return <section className="bg-black min-h-screen relative overflow-x-auto">
@@ -68,14 +69,27 @@ const FeaturesSection = () => {
         </Card>
 
         <Card className="min-w-[400px] p-8 bg-zinc-900 text-white border-none rounded-xl">
-          <h3 className="text-2xl font-bold mb-4">Live Sessions</h3>
-          <p className="text-gray-300">
-            Participate in regular live coding sessions, workshops, and Q&A sessions to enhance your learning experience
-            and get immediate feedback on your progress.
+          <h3 className="text-2xl font-bold mb-4">Weekly Quizzes & Gifts</h3>
+          <p className="text-gray-300 mb-8">
+            Weekly quizzes to earn exclusive rewards and gifts to celebrate your progress.
           </p>
-          <div className="mt-6">
-            <div className="px-4 py-2 bg-blue-600 rounded-lg inline-block">
-              Join next session
+          <div className="relative">
+            {/* Option Bars */}
+            <div className="space-y-3">
+              <div className="bg-[#D3E4FD] text-black px-4 py-2 rounded-lg w-3/4">
+                Option A
+              </div>
+              <div className="bg-[#FFDEE2] text-black px-4 py-2 rounded-lg w-3/4">
+                Option B
+              </div>
+              <div className="bg-[#FEF7CD] text-black px-4 py-2 rounded-lg w-3/4">
+                Option C
+              </div>
+            </div>
+            
+            {/* Gift Icon Circle */}
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-24 h-24 bg-white rounded-full flex items-center justify-center">
+              <Gift size={32} className="text-[#ea384c]" />
             </div>
           </div>
         </Card>
