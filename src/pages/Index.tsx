@@ -6,6 +6,7 @@ import FeaturesSection from "@/components/FeaturesSection";
 import TimelineSection from "@/components/TimelineSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import CommunityVoices from "@/components/CommunityVoices";
+import EnrollBanner from "@/components/EnrollBanner";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -18,6 +19,7 @@ const Index = () => {
       <TimelineSection />
       <ProjectsSection />
       <CommunityVoices />
+      <EnrollBanner />
       <Footer />
     </div>
   );
