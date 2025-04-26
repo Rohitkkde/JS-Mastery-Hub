@@ -37,23 +37,27 @@ const CommunityVoices = () => {
         </h2>
       </div>
 
-      <Carousel
-        opts={{
-          align: "start",
-          loop: true,
-          dragFree: true,
-          containScroll: false,
-        }}
-        className="w-full"
-      >
-        <CarouselContent className="flex animate-carousel">
-          {[...testimonials, ...testimonials].map((testimonial, index) => (
-            <CarouselItem key={index} className="md:basis-[600px] pl-8">
-              <div className={`${testimonial.bgColor} p-12 rounded-3xl min-h-[400px] flex flex-col justify-between`}>
-                <blockquote className="text-xl font-medium mb-8">
-                  {testimonial.text}
-                </blockquote>
-                <div className="flex items-center gap-4">
+      <div className="relative">
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+            dragFree: true,
+            containScroll: false,
+          }}
+          className="w-full"
+        >
+          <CarouselContent className="flex animate-carousel">
+            {[...testimonials, ...testimonials].map((testimonial, index) => (
+              <div key={index} className="flex flex-col items-center">
+                <CarouselItem className="md:basis-[600px] pl-8">
+                  <div className={`${testimonial.bgColor} p-12 rounded-3xl min-h-[250px]`}>
+                    <blockquote className="text-xl font-medium">
+                      {testimonial.text}
+                    </blockquote>
+                  </div>
+                </CarouselItem>
+                <div className="flex items-center gap-4 mt-6 mb-8">
                   <Avatar>
                     <AvatarFallback className="bg-black/10">
                       JS
@@ -65,10 +69,10 @@ const CommunityVoices = () => {
                   </div>
                 </div>
               </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-      </Carousel>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      </div>
     </section>
   );
 };
