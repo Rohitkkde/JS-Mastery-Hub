@@ -1,16 +1,11 @@
-
 import React from 'react';
 import { Card } from './ui/card';
-
 const FeaturesSection = () => {
-  return (
-    <section className="bg-black min-h-screen relative overflow-x-auto">
+  return <section className="bg-black min-h-screen relative overflow-x-auto">
       <div className="flex items-center gap-8 px-8 py-20">
         {/* Decorative Angular Bracket */}
         <div className="absolute top-[20%] left-[15%] transform -translate-x-1/2 -translate-y-1/2">
-          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M54 10L10 54" stroke="#F57642" strokeWidth="4" strokeLinecap="round"/>
-          </svg>
+          
         </div>
 
         {/* Title */}
@@ -28,11 +23,9 @@ const FeaturesSection = () => {
             Each module also includes practice questions and weekly live doubt sessions along with live webinars.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
-            {['Video tutorials', 'Practice Questions', 'JS Guides', 'Webinars', 'Doubt Sessions', 'Exclusive content'].map((tag) => (
-              <span key={tag} className="px-3 py-1 rounded-full text-sm bg-zinc-800">
+            {['Video tutorials', 'Practice Questions', 'JS Guides', 'Webinars', 'Doubt Sessions', 'Exclusive content'].map(tag => <span key={tag} className="px-3 py-1 rounded-full text-sm bg-zinc-800">
                 {tag}
-              </span>
-            ))}
+              </span>)}
           </div>
         </Card>
 
@@ -43,11 +36,7 @@ const FeaturesSection = () => {
             ask questions, and grow together.
           </p>
           <div className="mt-6">
-            <img
-              src="/lovable-uploads/74ae55b0-6252-48bd-8ed9-9b9e6d051c90.png"
-              alt="Community members"
-              className="w-32 h-32 object-cover rounded-lg"
-            />
+            <img src="/lovable-uploads/74ae55b0-6252-48bd-8ed9-9b9e6d051c90.png" alt="Community members" className="w-32 h-32 object-cover rounded-lg" />
           </div>
         </Card>
 
@@ -64,8 +53,6 @@ const FeaturesSection = () => {
           </div>
         </Card>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default FeaturesSection;
