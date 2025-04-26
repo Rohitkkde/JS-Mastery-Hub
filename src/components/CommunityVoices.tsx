@@ -50,7 +50,7 @@ const CommunityVoices = () => {
           <CarouselContent className="flex animate-carousel">
             {[...testimonials, ...testimonials].map((testimonial, index) => (
               <div key={index} className="flex flex-col items-center">
-                <CarouselItem className="md:basis-[1200px] pl-8">
+                <CarouselItem className="pl-8" style={{width: "1200px"}}>
                   <div className={`${testimonial.bgColor} p-12 rounded-3xl min-h-[250px]`}>
                     <blockquote className="text-xl font-medium">
                       {testimonial.text}
