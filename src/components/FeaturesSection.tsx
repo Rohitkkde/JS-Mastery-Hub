@@ -6,6 +6,13 @@ const FeaturesSection = () => {
   return (
     <section className="bg-black min-h-screen relative overflow-x-auto">
       <div className="flex items-center gap-8 px-8 py-20">
+        {/* Decorative Angular Bracket */}
+        <div className="absolute top-[20%] left-[15%] transform -translate-x-1/2 -translate-y-1/2">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M54 10L10 54" stroke="#F57642" strokeWidth="4" strokeLinecap="round"/>
+          </svg>
+        </div>
+
         {/* Title */}
         <div className="min-w-[600px] text-white pl-20">
           <h2 className="text-7xl font-bold leading-tight">
@@ -62,4 +69,3 @@ const FeaturesSection = () => {
 };
 
 export default FeaturesSection;
-
