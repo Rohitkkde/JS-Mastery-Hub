@@ -5,22 +5,43 @@ import { Card } from './ui/card';
 const FeaturesSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const lastCardRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
     const section = sectionRef.current;
     const container = containerRef.current;
+    const lastCard = lastCardRef.current;
     
-    if (!section || !container) return;
+    if (!section || !container || !lastCard) return;
     
     const handleScroll = () => {
-      const rect = section.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
-        container.style.transform = `translateX(${-progress * 60}%)`;
+      const sectionRect = section.getBoundingClientRect();
+      const lastCardRect = lastCard.getBoundingClientRect();
+      
+      // Check if section is in view
+      if (sectionRect.top <= window.innerHeight && sectionRect.bottom >= 0) {
+        // Calculate how far we've scrolled into the section
+        // Start at 0 when section first comes into view
+        // End at 1 when last card is fully in view
+        const startPoint = window.innerHeight; // When section top reaches bottom of viewport
+        const endPoint = window.innerHeight - lastCardRect.right + lastCard.offsetWidth; // When last card is fully visible
+        
+        // Calculate progress based on section's position
+        let progress = (startPoint - sectionRect.top) / (startPoint - endPoint);
+        
+        // Clamp progress between 0 and 1
+        progress = Math.max(0, Math.min(1, progress));
+        
+        // Apply the transform with the maxScrollAmount as a percentage
+        const maxScrollAmount = 60;
+        container.style.transform = `translateX(${-progress * maxScrollAmount}%)`;
       }
     };
     
     window.addEventListener('scroll', handleScroll);
+    // Trigger once on mount to initialize position
+    handleScroll();
+    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -65,7 +86,7 @@ const FeaturesSection = () => {
           </div>
         </Card>
 
-        <Card className="min-w-[400px] p-8 bg-zinc-900 text-white border-none rounded-xl">
+        <Card ref={lastCardRef} className="min-w-[400px] p-8 bg-zinc-900 text-white border-none rounded-xl">
           <h3 className="text-2xl font-bold mb-4">Live Sessions</h3>
           <p className="text-gray-300">
             Participate in regular live coding sessions, workshops, and Q&A sessions to enhance your learning experience
