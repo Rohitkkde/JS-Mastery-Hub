@@ -6,6 +6,7 @@ import FeaturesSection from "@/components/FeaturesSection";
 import TimelineSection from "@/components/TimelineSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import CommunityVoices from "@/components/CommunityVoices";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -17,6 +18,7 @@ const Index = () => {
       <TimelineSection />
       <ProjectsSection />
       <CommunityVoices />
+      <Footer />
     </div>
   );
 };
