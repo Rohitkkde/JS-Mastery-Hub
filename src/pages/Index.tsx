@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import TestimonialSection from "@/components/TestimonialSection";
 import FeaturesSection from "@/components/FeaturesSection";
+import TimelineSection from "@/components/TimelineSection";
 
 const Index = () => {
   return (
@@ -11,6 +12,7 @@ const Index = () => {
       <Hero />
       <TestimonialSection />
       <FeaturesSection />
+      <TimelineSection />
     </div>
   );
 };
