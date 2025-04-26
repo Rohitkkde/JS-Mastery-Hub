@@ -30,9 +30,9 @@ const testimonials = [
 
 const CommunityVoices = () => {
   return (
-    <section className="py-24 bg-black overflow-hidden">
+    <section className="py-24 bg-[#FDFAF5] overflow-hidden">
       <div className="container mx-auto mb-16">
-        <h2 className="text-[120px] leading-none font-bold text-white mb-8">
+        <h2 className="text-[60px] leading-none font-bold text-black mb-8">
           Community<br />Voices
         </h2>
       </div>
@@ -50,7 +50,7 @@ const CommunityVoices = () => {
           {[...testimonials, ...testimonials].map((testimonial, index) => (
             <CarouselItem key={index} className="md:basis-[600px] pl-8">
               <div className={`${testimonial.bgColor} p-12 rounded-3xl min-h-[400px] flex flex-col justify-between`}>
-                <blockquote className="text-2xl font-medium mb-8">
+                <blockquote className="text-xl font-medium mb-8">
                   {testimonial.text}
                 </blockquote>
                 <div className="flex items-center gap-4">
@@ -60,8 +60,8 @@ const CommunityVoices = () => {
                     </AvatarFallback>
                   </Avatar>
                   <div>
-                    <h4 className="font-bold text-xl mb-1">{testimonial.course}</h4>
-                    <p className="text-sm font-mono">{testimonial.role}</p>
+                    <h4 className="font-bold text-lg mb-1">{testimonial.course}</h4>
+                    <p className="text-xs font-mono">{testimonial.role}</p>
                   </div>
                 </div>
               </div>
