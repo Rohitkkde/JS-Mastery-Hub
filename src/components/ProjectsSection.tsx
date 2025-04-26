@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Card, CardContent } from "./ui/card";
+import { Card } from "./ui/card";
 import { Chrome } from "lucide-react";
 
 const projects = [
@@ -40,37 +40,43 @@ const ProjectsSection = () => {
           {projects.map((project, index) => (
             <Card 
               key={index} 
-              className="w-[50vw] bg-white/10 backdrop-blur-sm border-0 hover:translate-y-[-8px] transition-transform duration-300 relative"
+              className="w-full max-w-4xl bg-white text-black rounded-3xl overflow-hidden hover:translate-y-[-8px] transition-transform duration-300"
             >
-              <CardContent className="p-16">
+              <div className="relative p-12">
+                <div className="flex justify-between items-start gap-8">
+                  {/* Left Content */}
+                  <div className="flex-1">
+                    <h3 className="text-3xl font-bold mb-6">{project.title}</h3>
+                    <p className="text-gray-600 mb-8 text-lg leading-relaxed">{project.description}</p>
+                    
+                    <div className="flex flex-wrap gap-3">
+                      {project.tags.map((tag, i) => (
+                        <span 
+                          key={i}
+                          className="px-4 py-1.5 bg-gray-100 text-gray-700 rounded-full text-sm font-medium"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {/* Right Image */}
+                  <div className="w-64 h-48 rounded-xl overflow-hidden">
+                    <img 
+                      src={`https://images.unsplash.com/${project.image}?auto=format&fit=crop&w=800&q=80`}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+
+                {/* Project Badge */}
                 <div className="absolute top-6 right-6 bg-orange text-white px-4 py-2 rounded-full flex items-center gap-2">
                   <Chrome className="w-4 h-4" />
                   <span className="text-sm font-medium">Chrome Extension</span>
                 </div>
-                
-                <div className="flex justify-between items-start mb-10">
-                  <span className="text-7xl font-mono text-white/20">{project.number}</span>
-                  <img 
-                    src={`https://images.unsplash.com/${project.image}?auto=format&fit=crop&w=800&q=80`}
-                    alt={project.title}
-                    className="w-24 h-24 object-cover rounded-2xl"
-                  />
-                </div>
-                
-                <h3 className="text-4xl font-bold mb-6">{project.title}</h3>
-                <p className="text-white/70 mb-10 text-lg leading-relaxed max-w-2xl">{project.description}</p>
-                
-                <div className="flex flex-wrap gap-3">
-                  {project.tags.map((tag, i) => (
-                    <span 
-                      key={i}
-                      className="px-5 py-2.5 bg-white/10 rounded-full text-sm font-medium"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </CardContent>
+              </div>
             </Card>
           ))}
         </div>
