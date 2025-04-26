@@ -52,9 +52,18 @@ export default {
       animation: {
         marquee: 'marquee 20s linear infinite',
         'marquee-reverse': 'marquee-reverse 20s linear infinite',
-        carousel: 'carousel 40s linear infinite',
+        'carousel': 'carousel 40s linear infinite',
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    function({ addUtilities }) {
+      addUtilities({
+        '.pause': {
+          'animation-play-state': 'paused',
+        }
+      })
+    }
+  ],
 } satisfies Config;
