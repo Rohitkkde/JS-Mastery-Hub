@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -37,7 +36,7 @@ const Footer = () => {
           </div>
         </nav>
       </div>
-      <div className="diagonal-stripes">
+      <div className="bg-orange">
         <div className="relative overflow-hidden">
           {/* First marquee - moving right to left */}
           <div className="flex whitespace-nowrap animate-marquee">
