@@ -5,6 +5,7 @@ import TestimonialSection from "@/components/TestimonialSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import TimelineSection from "@/components/TimelineSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import CommunityVoices from "@/components/CommunityVoices";
 
 const Index = () => {
   return (
@@ -15,6 +16,7 @@ const Index = () => {
       <FeaturesSection />
       <TimelineSection />
       <ProjectsSection />
+      <CommunityVoices />
     </div>
   );
 };

@@ -43,11 +43,16 @@ export default {
         'marquee-reverse': {
           '0%': { transform: 'translateX(-50%)' },
           '100%': { transform: 'translateX(0%)' },
-        }
+        },
+        carousel: {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(calc(-100% - 1rem))' },
+        },
       },
       animation: {
         marquee: 'marquee 20s linear infinite',
         'marquee-reverse': 'marquee-reverse 20s linear infinite',
+        carousel: 'carousel 40s linear infinite',
       },
     },
   },
