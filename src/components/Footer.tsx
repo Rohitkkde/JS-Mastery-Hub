@@ -36,7 +36,7 @@ const Footer = () => {
           </div>
         </nav>
       </div>
-      <div className="bg-orange">
+      <div className="bg-black">
         <div className="relative overflow-hidden">
           {/* First marquee - moving right to left */}
           <div className="flex whitespace-nowrap animate-marquee">
