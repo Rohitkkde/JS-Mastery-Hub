@@ -37,8 +37,8 @@ const CircularButton: React.FC<CircularButtonProps> = ({ variant = 'yellow', for
         
         {/* Curved Text */}
         <svg className={`absolute inset-0 w-full h-full ${textColorClass}`} viewBox="0 0 100 100">
-          {/* Updated path with smaller radius (from 37 to 32) to move text inward by ~5px */}
-          <path id="curve" fill="none" d="M 50,50 m -32,0 a 32,32 0 1,1 64,0 a 32,32 0 1,1 -64,0" />
+          {/* Updated path with larger radius (from 32 to 34) to position text */}
+          <path id="curve" fill="none" d="M 50,50 m -34,0 a 34,34 0 1,1 68,0 a 34,34 0 1,1 -68,0" />
           <text className={`text-[12px] uppercase font-mono tracking-[1px] fill-current`}>
             <textPath href="#curve" startOffset="5%">
               Enroll Now • Enroll Now •
