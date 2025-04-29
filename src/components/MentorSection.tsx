@@ -3,17 +3,17 @@ import React from 'react';
 import { CirclePlay } from 'lucide-react';
 import { Button } from './ui/button';
 
-const TestimonialSection = () => {
+const MentorSection = () => {
   return (
-    <section className="container mx-auto px-4 mb-20">
-      <div className="bg-[#3658D3] rounded-bl-[64px] overflow-hidden">
-        <div className="grid md:grid-cols-2 gap-8 p-8 md:p-12">
+    <section className="w-screen h-screen flex items-end justify-end">
+      <div className="bg-[#3658D3] rounded-bl-[100px] h-[85vh] ml-24">
+        <div className="grid md:grid-cols-2 gap-10 p-8 md:p-12 h-full">
           {/* Video Side */}
-          <div className="relative group cursor-pointer">
+          <div className="relative group cursor-pointer h-full">
             <img
               src="/lovable-uploads/601b047f-7866-49f5-80f1-22a730dc534f.png"
               alt="Urvashi's Testimonial"
-              className="w-full h-full object-cover rounded-lg"
+              className="w-full h-full object-cover rounded-bl-[100px]"
             />
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="bg-orange/90 rounded-full p-4 transition-transform transform group-hover:scale-110">
@@ -23,10 +23,10 @@ const TestimonialSection = () => {
           </div>
 
           {/* Content Side */}
-          <div className="text-white flex flex-col justify-center">
-            <p className="text-2xl mb-2">Meet</p>
-            <h2 className="text-5xl font-bold mb-6">Urvashi</h2>
-            <blockquote className="text-xl mb-8 opacity-90">
+          <div className="text-[#EBEEFB] flex flex-col justify-center">
+            <p className="font-thin text-5xl mb-2">Meet</p>
+            <h2 className="text-9xl font-bold mb-6">Urvashi</h2>
+            <blockquote className="text-2xl mb-8 opacity-90">
               "A community of excellent JavaScript developers. A community of excellent JavaScript developers. A community of excellent JavaScript developers"
             </blockquote>
             <Button
@@ -42,4 +42,4 @@ const TestimonialSection = () => {
   );
 };
 
-export default TestimonialSection;
+export default MentorSection;
