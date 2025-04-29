@@ -42,35 +42,35 @@ const weeklyData = [
 
 const TimelineSection = () => {
   return (
-    <section className="bg-white py-20 px-8">
+    <section className="py-20 px-8">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-7xl font-bold mb-20">Your Learning Journey</h2>
-        
+
         <div className="relative">
           {/* Vertical Timeline Line */}
           <div className="absolute left-[200px] top-0 bottom-0 w-0.5 bg-[#3658D3]" />
-          
+
           {/* Timeline Items */}
           <div className="space-y-16">
             {weeklyData.map((week, index) => (
               <div key={index} className="relative flex gap-8">
                 {/* Timeline Dot */}
-                <div className="absolute left-[192px] w-4 h-4 rounded-full bg-[#F7DF1E] border-4 border-[#3658D3]" 
+                <div className="absolute left-[192px] w-4 h-4 rounded-full bg-[#F7DF1E] border-4 border-[#3658D3]"
                      style={{ top: "32px" }} />
-                
+
                 {/* Week Card */}
                 <div className="w-[180px] text-lg font-mono">
                   Week {week.week}
                 </div>
-                
+
                 <div className={`min-w-[300px] p-6 rounded-xl`}
                      style={{ backgroundColor: week.bgColor }}>
                   <h3 className="text-2xl font-bold mb-4">{week.title}</h3>
-                  
+
                   {/* Topics */}
                   <div className="flex flex-wrap gap-2">
                     {week.topics.map((topic, i) => (
-                      <span 
+                      <span
                         key={i}
                         className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm"
                       >

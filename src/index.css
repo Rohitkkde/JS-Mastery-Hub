@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,40 +6,27 @@
 
 @layer base {
   :root {
-    --background: 20 44% 99%;  /* Converted #FDFAF5 to HSL */
+    --background: 20 44% 99%; /* Converted #FDFAF5 to HSL */
     --foreground: 0 0% 5%;
-    
+
     --primary: 225 64% 52%;
     --primary-foreground: 0 0% 100%;
-    
+
     --accent-1: 39 100% 74%;
     --accent-2: 17 90% 61%;
     --accent-3: 56 93% 54%;
-    
+
     --radius: 0.5rem;
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
-    font-family: 'Space Grotesk', sans-serif;
-    position: relative;
-  }
-  
-  body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    font-family: "Space Grotesk", sans-serif;
     background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v100H0z' fill='none' stroke='%23333333' stroke-opacity='0.1' stroke-width='1'/%3E%3C/svg%3E");
     background-size: 80px 80px;
     background-position: center;
     background-repeat: repeat;
-    z-index: 0;
-    pointer-events: none;
   }
-  
+
   #root {
     position: relative;
     z-index: 1;
@@ -51,10 +38,11 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.diagonal-stripes {
-  background: none; /* Remove the striped background */
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }

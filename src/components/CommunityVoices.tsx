@@ -30,7 +30,7 @@ const testimonials = [
 
 const CommunityVoices = () => {
   return (
-    <section className="py-24 bg-[#FDFAF5] overflow-hidden">
+    <section className="py-24 overflow-hidden">
       <div className="container mx-auto mb-16">
         <h2 className="text-[60px] leading-none font-bold text-black mb-8">
           Community<br />Voices
