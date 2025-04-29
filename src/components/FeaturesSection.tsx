@@ -1,4 +1,3 @@
-
 import React from "react"
 import { Card } from "./ui/card"
 import AngularBracket from "./icons/AngularBracket"
@@ -6,6 +5,21 @@ import Sparkle from "./icons/Sparkle"
 import DiscordIcon from "./icons/DiscordIcon"
 
 const FeaturesSection = () => {
+  // Define a set of colors from our theme that work well for pills
+  const pillColors = [
+    'bg-blue-light/80',
+    'bg-yellow-mango/80', 
+    'bg-orange/80',
+    'bg-blue-dark/80',
+    'bg-yellow-lemon/80',
+  ]
+
+  // Function to get a random color from our array
+  const getRandomColor = () => {
+    const randomIndex = Math.floor(Math.random() * pillColors.length)
+    return pillColors[randomIndex]
+  }
+
   return (
     <section className='bg-black min-h-screen relative flex justify-between overflow-x-auto'>
       <div className='flex items-center justify-between gap-8 px-16 py-28'>
@@ -41,7 +55,7 @@ const FeaturesSection = () => {
             ].map((tag) => (
               <span
                 key={tag}
-                className='px-3 py-1 rounded-full text-sm bg-zinc-800'
+                className={`px-3 py-1 rounded-full text-sm text-black font-medium ${getRandomColor()}`}
               >
                 {tag}
               </span>
