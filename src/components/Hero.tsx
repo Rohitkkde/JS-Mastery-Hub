@@ -18,7 +18,7 @@ const Hero = () => {
         </h1>
 
         <div className="relative mb-20">
-          <div className="mx-auto w-48 h-48 md:w-64 md:h-64 relative">
+          <div className="mx-auto w-52 h-52 md:w-64 md:h-64 relative">
             <img src="/lovable-uploads/fd62cf28-89ed-4091-9d2c-177436cf58c8.png" alt="JavaScript Logo" className="w-full h-full object-contain" />
             <div className="absolute -top-6 -right-6 animate-float">
               <CircularButton variant="blue" foreground="white" />
