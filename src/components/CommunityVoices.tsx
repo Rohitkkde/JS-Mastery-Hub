@@ -32,7 +32,7 @@ const CommunityVoices = () => {
   return (
     <section className="py-24 overflow-hidden">
       <div className="container mx-auto mb-16">
-        <h2 className="text-[60px] leading-none font-bold text-black mb-8">
+        <h2 className="text-8xl leading-none font-bold text-black mb-8">
           Community<br />Voices
         </h2>
       </div>
@@ -49,8 +49,8 @@ const CommunityVoices = () => {
         >
           <CarouselContent className="flex animate-carousel group-hover:pause">
             {[...testimonials, ...testimonials].map((testimonial, index) => (
-              <div key={index} className="flex flex-col items-center">
-                <CarouselItem className="md:basis-[600px] pl-8">
+              <div key={index} className="flex flex-col items-center h-full">
+                <CarouselItem className="md:w-[500px] h-full pl-8">
                   <div className={`${testimonial.bgColor} p-12 rounded-3xl min-h-[250px]`}>
                     <blockquote className="text-xl font-medium">
                       {testimonial.text}
