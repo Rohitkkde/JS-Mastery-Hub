@@ -7,8 +7,8 @@ type CircularButtonProps = {
 
 const CircularButton: React.FC<CircularButtonProps> = ({ variant = 'yellow' }) => {
   const bgColorClass = variant === 'blue' 
-    ? "bg-blue-light hover:bg-blue-light/90" 
-    : "bg-yellow-lemon hover:bg-yellow-lemon/90";
+    ? "bg-[#3658D3] hover:bg-[#3658D3]/90" 
+    : "bg-[#FFD37D] hover:bg-[#FFD37D]/90";
 
   return (
     <div className="group relative w-32 h-32 cursor-pointer">
