@@ -29,14 +29,11 @@ const Hero = () => {
           <MarqueeBanner />
         </div>
 
-        <div className="absolute top-20 left-10 text-yellow-mango">
-          <Sparkle fill="#FFD37D" width={60} height={60} />
+        <div className="absolute top-20 left-80 text-yellow-mango -rotate-12">
+          <Sparkle fill="#FFD37D" width={90} height={90} />
         </div>
-        <div className="absolute bottom-40 right-10 text-blue-light text-4xl">
-          <Sparkle fill="#70A2E1" width={40} height={40} />
-        </div>
-        <div className="absolute top-1/3 right-20 text-orange rotate-45">
-          <Sparkle fill="#F57642" width={50} height={50} />
+        <div className="absolute top-80 right-64 text-orange rotate-12">
+          <Sparkle fill="#F57642" width={80} height={80} />
         </div>
       </div>
     </div>;
