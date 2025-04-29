@@ -1,10 +1,18 @@
 
 import React from 'react';
 
-const CircularButton = () => {
+type CircularButtonProps = {
+  variant?: 'yellow' | 'blue';
+};
+
+const CircularButton: React.FC<CircularButtonProps> = ({ variant = 'yellow' }) => {
+  const bgColorClass = variant === 'blue' 
+    ? "bg-blue-light hover:bg-blue-light/90" 
+    : "bg-yellow-lemon hover:bg-yellow-lemon/90";
+
   return (
     <div className="group relative w-32 h-32 cursor-pointer">
-      <div className="absolute inset-0 bg-yellow-lemon hover:bg-yellow-lemon/90 transition-colors rounded-full">
+      <div className={`absolute inset-0 ${bgColorClass} transition-colors rounded-full`}>
         {/* Center Icon */}
         <div className="absolute inset-0 flex items-center justify-center">
           <svg width="28" height="28" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-black">
