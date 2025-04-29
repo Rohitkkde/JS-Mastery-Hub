@@ -10,7 +10,7 @@ const EnrollBanner = () => {
           Ready to master JavaScript?
         </h2>
         <div className="hidden md:block">
-          <CircularButton variant="yellow" />
+          <CircularButton variant="yellow" foreground="black" />
         </div>
       </div>
     </div>
