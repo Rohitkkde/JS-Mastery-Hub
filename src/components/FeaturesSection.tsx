@@ -55,9 +55,9 @@ const FeaturesSection = () => {
             Join a supportive and interactive community of fellow JavaScript
             developers on Discord
           </p>
-          <div className='mt-6 relative w-full h-48 flex items-center justify-center'>
+          <div className='mt-6 relative w-full  flex items-center justify-center'>
             {/* 3x3 Grid with Discord in center and alternating images/sparkles */}
-            <div className="relative grid grid-cols-3 gap-2 w-full h-full">
+            <div className="relative w-60 h-60 grid grid-cols-3 gap-2">
               {/* Top Row */}
               <div className="relative">
                 <img
@@ -70,7 +70,7 @@ const FeaturesSection = () => {
                 </div>
               </div>
               <div className="flex items-center justify-center">
-                <Sparkle fill="#FFD37D" width={24} height={24} />
+                <Sparkle fill="#FFD37D" width={56} height={56} />
               </div>
               <div className="relative">
                 <img
@@ -82,10 +82,10 @@ const FeaturesSection = () => {
                   <div className="w-full h-full rounded-full overflow-hidden border-2 border-[#212121]" />
                 </div>
               </div>
-              
+
               {/* Middle Row */}
               <div className="flex items-center justify-center">
-                <Sparkle fill="#FFD37D" width={24} height={24} />
+                <Sparkle fill="#FFD37D" width={56} height={56} />
               </div>
               <div className="flex items-center justify-center">
                 <div className="relative w-20 h-20 rounded-full bg-[#5865F2] flex items-center justify-center">
@@ -93,9 +93,9 @@ const FeaturesSection = () => {
                 </div>
               </div>
               <div className="flex items-center justify-center">
-                <Sparkle fill="#FFD37D" width={24} height={24} />
+                <Sparkle fill="#FFD37D" width={56} height={56} />
               </div>
-              
+
               {/* Bottom Row */}
               <div className="relative">
                 <img
@@ -108,7 +108,7 @@ const FeaturesSection = () => {
                 </div>
               </div>
               <div className="flex items-center justify-center">
-                <Sparkle fill="#FFD37D" width={24} height={24} />
+                <Sparkle fill="#FFD37D" width={56} height={56} />
               </div>
               <div className="relative">
                 <img
@@ -132,24 +132,24 @@ const FeaturesSection = () => {
           </p>
           <div className='relative'>
             {/* Option Bars */}
-            <div className='space-y-3'>
-              <div className='bg-[#70A2E1] text-black px-4 py-2 rounded-lg w-3/4'>
+            <div className='space-y-3 font-medium text-lg'>
+              <div className='bg-[#70A2E1] text-black px-6 py-3 rounded-lg w-3/4'>
                 Option A
               </div>
-              <div className='bg-[#FFBABA] text-black px-4 py-2 rounded-lg w-3/4'>
+              <div className='bg-[#FFBABA] text-black px-6 py-3 rounded-lg w-3/4'>
                 Option B
               </div>
-              <div className='bg-[#FFD37D] text-black px-4 py-2 rounded-lg w-3/4'>
+              <div className='bg-[#FFD37D] text-black px-6 py-3 rounded-lg w-3/4'>
                 Option C
               </div>
             </div>
 
             {/* SVG Gift Badge */}
-            <svg 
-              width="209" 
-              height="209" 
-              viewBox="0 0 209 209" 
-              fill="none" 
+            <svg
+              width="209"
+              height="209"
+              viewBox="0 0 209 209"
+              fill="none"
               xmlns="http://www.w3.org/2000/svg"
               className="absolute right-0 top-1/2 -translate-y-1/2 w-48 h-48"
             >
