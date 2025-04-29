@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { CirclePlay } from 'lucide-react';
 import { Button } from './ui/button';
 
 const MentorSection = () => {
@@ -16,9 +15,21 @@ const MentorSection = () => {
               className="w-full h-full object-cover rounded-bl-[100px]"
             />
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="bg-orange/90 rounded-full p-4 transition-transform transform group-hover:scale-110">
-                <CirclePlay className="w-12 h-12 text-white" />
-              </div>
+              <svg 
+                width="130" 
+                height="130" 
+                viewBox="0 0 130 130" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                className="transition-transform transform group-hover:scale-110"
+              >
+                <path 
+                  fillRule="evenodd" 
+                  clipRule="evenodd" 
+                  d="M65 130C100.899 130 130 100.899 130 65C130 29.1015 100.899 0 65 0C29.1015 0 0 29.1015 0 65C0 100.899 29.1015 130 65 130ZM83.6507 67.1529C85.6507 65.9982 85.6507 63.1114 83.6507 61.9567L57.2569 46.7182C55.2569 45.5635 52.7569 47.0069 52.7569 49.3163V79.7933C52.7569 82.1027 55.2569 83.5461 57.2569 82.3914L83.6507 67.1529Z" 
+                  fill="#F57642"
+                />
+              </svg>
             </div>
           </div>
 
