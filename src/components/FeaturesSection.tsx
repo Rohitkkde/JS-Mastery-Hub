@@ -145,13 +145,13 @@ const FeaturesSection = () => {
           <div className='relative'>
             {/* Option Bars */}
             <div className='space-y-3'>
-              <div className='bg-[#D3E4FD] text-black px-4 py-2 rounded-lg w-3/4'>
+              <div className='bg-[#70A2E1] text-black px-4 py-2 rounded-lg w-3/4'>
                 Option A
               </div>
-              <div className='bg-[#FFDEE2] text-black px-4 py-2 rounded-lg w-3/4'>
+              <div className='bg-[#FFBABA] text-black px-4 py-2 rounded-lg w-3/4'>
                 Option B
               </div>
-              <div className='bg-[#FEF7CD] text-black px-4 py-2 rounded-lg w-3/4'>
+              <div className='bg-[#FFD37D] text-black px-4 py-2 rounded-lg w-3/4'>
                 Option C
               </div>
             </div>
