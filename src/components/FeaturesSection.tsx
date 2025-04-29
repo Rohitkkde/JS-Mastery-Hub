@@ -1,8 +1,9 @@
 
 import React from "react"
 import { Card } from "./ui/card"
-import { Gift } from "lucide-react"
+import { Discord } from "lucide-react"
 import AngularBracket from "./icons/AngularBracket"
+import Sparkle from "./icons/Sparkle"
 
 const FeaturesSection = () => {
   return (
@@ -55,83 +56,70 @@ const FeaturesSection = () => {
             developers on Discord
           </p>
           <div className='mt-6 relative w-full h-48 flex items-center justify-center'>
-            {/* Discord Logo in Center */}
-            <div className='absolute z-20 bg-[#5865F2] rounded-full p-4 w-16 h-16 flex items-center justify-center'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                width='32'
-                height='32'
-                viewBox='0 0 24 24'
-                fill='none'
-                stroke='white'
-                strokeWidth='2'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-              >
-                <path d='M8.5 12a2.5 2.5 0 1 0 5 0 2.5 2.5 0 1 0-5 0z' />
-                <path d='M15.5 12a2.5 2.5 0 1 0 5 0 2.5 2.5 0 1 0-5 0z' />
-                <path d='M18 6.75c-1.748-.667-3.8-1-6-1s-4.252.333-6 1' />
-                <path d='M18 17.25c-1.748.667-3.8 1-6 1s-4.252-.333-6-1' />
-                <path d='M20.25 12c0 4.557-3.694 8.25-8 8.25s-8-3.693-8-8.25S8.444 3.75 12.25 3.75s8 3.693 8 8.25z' />
-              </svg>
-            </div>
-
-            {/* Profile Images with Star Background */}
-            <div className='absolute top-0 w-10 h-10'>
-              <div
-                className='absolute inset-0 bg-yellow-mango rotate-45'
-                style={{
-                  clipPath:
-                    "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)",
-                }}
-              ></div>
-              <img
-                src='/lovable-uploads/cfa2c4b4-8953-4fa0-9eda-faace741926e.png'
-                alt='Community member'
-                className='absolute inset-0 w-full h-full rounded-full object-cover'
-              />
-            </div>
-            <div className='absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10'>
-              <div
-                className='absolute inset-0 bg-yellow-mango rotate-45'
-                style={{
-                  clipPath:
-                    "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)",
-                }}
-              ></div>
-              <img
-                src='/lovable-uploads/cfa2c4b4-8953-4fa0-9eda-faace741926e.png'
-                alt='Community member'
-                className='absolute inset-0 w-full h-full rounded-full object-cover'
-              />
-            </div>
-            <div className='absolute bottom-0 w-10 h-10'>
-              <div
-                className='absolute inset-0 bg-yellow-mango rotate-45'
-                style={{
-                  clipPath:
-                    "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)",
-                }}
-              ></div>
-              <img
-                src='/lovable-uploads/cfa2c4b4-8953-4fa0-9eda-faace741926e.png'
-                alt='Community member'
-                className='absolute inset-0 w-full h-full rounded-full object-cover'
-              />
-            </div>
-            <div className='absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10'>
-              <div
-                className='absolute inset-0 bg-yellow-mango rotate-45'
-                style={{
-                  clipPath:
-                    "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)",
-                }}
-              ></div>
-              <img
-                src='/lovable-uploads/cfa2c4b4-8953-4fa0-9eda-faace741926e.png'
-                alt='Community member'
-                className='absolute inset-0 w-full h-full rounded-full object-cover'
-              />
+            {/* 3x3 Grid with Discord in center and alternating images/sparkles */}
+            <div className="relative grid grid-cols-3 gap-2 w-full h-full">
+              {/* Top Row */}
+              <div className="relative">
+                <img
+                  src='/lovable-uploads/07d84dbe-195e-401b-8452-d75a59ced836.png'
+                  alt="Community member"
+                  className="w-16 h-16 rounded-full object-cover"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-full h-full rounded-full overflow-hidden border-2 border-[#212121]" />
+                </div>
+              </div>
+              <div className="flex items-center justify-center">
+                <Sparkle fill="#FFD37D" width={24} height={24} />
+              </div>
+              <div className="relative">
+                <img
+                  src='/lovable-uploads/07d84dbe-195e-401b-8452-d75a59ced836.png'
+                  alt="Community member"
+                  className="w-16 h-16 rounded-full object-cover"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-full h-full rounded-full overflow-hidden border-2 border-[#212121]" />
+                </div>
+              </div>
+              
+              {/* Middle Row */}
+              <div className="flex items-center justify-center">
+                <Sparkle fill="#FFD37D" width={24} height={24} />
+              </div>
+              <div className="flex items-center justify-center">
+                <div className="relative w-20 h-20 rounded-full bg-[#5865F2] flex items-center justify-center">
+                  <Discord className="text-white w-10 h-10" />
+                </div>
+              </div>
+              <div className="flex items-center justify-center">
+                <Sparkle fill="#FFD37D" width={24} height={24} />
+              </div>
+              
+              {/* Bottom Row */}
+              <div className="relative">
+                <img
+                  src='/lovable-uploads/07d84dbe-195e-401b-8452-d75a59ced836.png'
+                  alt="Community member"
+                  className="w-16 h-16 rounded-full object-cover"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-full h-full rounded-full overflow-hidden border-2 border-[#212121]" />
+                </div>
+              </div>
+              <div className="flex items-center justify-center">
+                <Sparkle fill="#FFD37D" width={24} height={24} />
+              </div>
+              <div className="relative">
+                <img
+                  src='/lovable-uploads/07d84dbe-195e-401b-8452-d75a59ced836.png'
+                  alt="Community member"
+                  className="w-16 h-16 rounded-full object-cover"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-full h-full rounded-full overflow-hidden border-2 border-[#212121]" />
+                </div>
+              </div>
             </div>
           </div>
         </Card>
@@ -156,7 +144,7 @@ const FeaturesSection = () => {
               </div>
             </div>
 
-            {/* SVG Gift Badge (replacing the div with Gift icon) */}
+            {/* SVG Gift Badge */}
             <svg 
               width="209" 
               height="209" 
