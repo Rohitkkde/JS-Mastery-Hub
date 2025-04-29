@@ -1,9 +1,9 @@
 
 import React from "react"
 import { Card } from "./ui/card"
-import { Discord } from "lucide-react"
 import AngularBracket from "./icons/AngularBracket"
 import Sparkle from "./icons/Sparkle"
+import DiscordIcon from "./icons/DiscordIcon"
 
 const FeaturesSection = () => {
   return (
@@ -89,7 +89,7 @@ const FeaturesSection = () => {
               </div>
               <div className="flex items-center justify-center">
                 <div className="relative w-20 h-20 rounded-full bg-[#5865F2] flex items-center justify-center">
-                  <Discord className="text-white w-10 h-10" />
+                  <DiscordIcon className="text-white w-10 h-10" />
                 </div>
               </div>
               <div className="flex items-center justify-center">
