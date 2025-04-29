@@ -32,8 +32,12 @@ const Hero = () => {
         <div className="absolute top-20 left-10 text-yellow-mango">
           <Sparkle fill="#FFD37D" width={60} height={60} />
         </div>
-        <div className="absolute bottom-40 right-10 text-blue-light text-4xl">✦</div>
-        <div className="absolute top-1/3 right-20 text-orange text-5xl rotate-45">✦</div>
+        <div className="absolute bottom-40 right-10 text-blue-light text-4xl">
+          <Sparkle fill="#70A2E1" width={40} height={40} />
+        </div>
+        <div className="absolute top-1/3 right-20 text-orange rotate-45">
+          <Sparkle fill="#F57642" width={50} height={50} />
+        </div>
       </div>
     </div>;
 };
