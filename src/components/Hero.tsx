@@ -3,6 +3,7 @@ import React from 'react';
 import CircularButton from './CircularButton';
 import MarqueeBanner from './MarqueeBanner';
 import Sparkle from './icons/Sparkle';
+import AngularBracket from './icons/AngularBracket';
 
 const Hero = () => {
   return <div className="relative min-h-screen pt-20 overflow-hidden">
@@ -34,6 +35,12 @@ const Hero = () => {
         </div>
         <div className="absolute top-80 right-64 text-orange rotate-12">
           <Sparkle fill="#F57642" width={80} height={80} />
+        </div>
+        <div className="absolute top-48 left-48 text-blue-light font-bold text-[9rem] rotate-12">
+          <AngularBracket />
+        </div>
+        <div className="absolute top-20 right-56 text-blue-dark font-bold text-9xl -rotate-[190deg]">
+          <AngularBracket />
         </div>
       </div>
     </div>;
