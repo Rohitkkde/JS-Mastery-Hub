@@ -55,7 +55,7 @@ const CommunityVoices = () => {
             className={`flex animate-carousel ${isPaused ? "pause" : ""}`}
           >
             {[...testimonials, ...testimonials].map((testimonial, index) => (
-              <CarouselItem key={index} className='w-[300px] h-full pl-8'>
+              <CarouselItem key={index} className='w-[220px] h-full pl-8'>
                 <div
                   className={`${testimonial.bgColor} p-12 rounded-3xl min-h-[250px]`}
                   onMouseEnter={() => setIsPaused(true)}
