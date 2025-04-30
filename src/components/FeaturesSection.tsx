@@ -247,7 +247,7 @@ const FeaturesSection = () => {
             </div>
           </Card>
 
-          <CircularButton variant='blue' foreground='white' />
+          <CircularButton variant='blue' foreground='white' size="lg" />
         </motion.div>
       </div>
     </section>
