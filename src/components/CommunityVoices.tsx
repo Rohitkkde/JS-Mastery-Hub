@@ -49,7 +49,7 @@ const CommunityVoices = () => {
           }}
           className="w-full"
         >
-          <CarouselContent className={`flex ${isPaused ? 'pause' : 'animate-carousel'}`}>
+          <CarouselContent className={`flex animate-carousel ${isPaused ? 'pause' : ''}`}>
             {[...testimonials, ...testimonials].map((testimonial, index) => (
               <CarouselItem 
                 key={index} 
