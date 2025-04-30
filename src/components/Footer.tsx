@@ -1,3 +1,4 @@
+
 import React from "react"
 import { Link } from "react-router-dom"
 import Sparkle from "./icons/Sparkle"
@@ -5,7 +6,7 @@ import Sparkle from "./icons/Sparkle"
 const Footer = () => {
   return (
     <footer className='bg-black text-white rounded-tr-[100px]'>
-      <div className='container mx-auto py-16'>
+      <div className='container mx-auto py-16 font-mono'>
         <nav className='grid grid-cols-2 md:grid-cols-4 gap-8 mb-16'>
           <div>
             <h3 className='font-sans font-bold text-sm mb-4 text-zinc-500'>COURSE</h3>
