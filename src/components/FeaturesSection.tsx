@@ -5,7 +5,7 @@ import AngularBracket from "./icons/AngularBracket"
 import Sparkle from "./icons/Sparkle"
 import DiscordIcon from "./icons/DiscordIcon"
 import { useSpring, animated } from '@react-spring/web'
-import { useInView } from 'react-use-measure'
+import useInView from 'react-use-measure'
 
 const FeaturesSection = () => {
   // For tracking scroll position
