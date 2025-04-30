@@ -1,4 +1,3 @@
-
 import React from "react"
 import { Link } from "react-router-dom"
 import Sparkle from "./icons/Sparkle"
@@ -73,42 +72,39 @@ const Footer = () => {
       <div className='bg-black'>
         <div className='relative overflow-hidden'>
           {/* First marquee - moving right to left */}
-          <div className="relative whitespace-nowrap overflow-hidden">
-            <div className="inline-block animate-marquee">
-              <div className='flex items-center gap-8 py-12 text-8xl'>
-                <span className='font-extrabold text-white'>JavaScript Mastery</span>
-                <Sparkle fill={"#FFD37D"} width={64} height={64} />
-                <span className='font-extrabold text-white'>Filling the Gap</span>
-                <Sparkle fill={"#FFD37D"} width={64} height={64} />
-              </div>
-            </div>
-            <div className="inline-block animate-marquee absolute top-0 left-[100%]">
-              <div className='flex items-center gap-8 py-12 text-8xl'>
-                <span className='font-extrabold text-white'>JavaScript Mastery</span>
-                <Sparkle fill={"#FFD37D"} width={64} height={64} />
-                <span className='font-extrabold text-white'>Filling the Gap</span>
-                <Sparkle fill={"#FFD37D"} width={64} height={64} />
-              </div>
+          <div className='flex whitespace-nowrap animate-marquee'>
+            <div className='flex items-center gap-8 py-12 text-8xl'>
+              <span className='font-extrabold text-white'>
+                JavaScript Mastery
+              </span>
+              <Sparkle fill={"#FFD37D"} width={64} height={64} />
+              <span className='font-extrabold text-white'>
+                Filling the Gap
+              </span>
+              <Sparkle fill={"#FFD37D"} width={64} height={64} />
+              <span className='font-extrabold text-white'>
+                JavaScript Mastery
+              </span>
+              <Sparkle fill={"#FFD37D"} width={64} height={64} />
+              <span className='font-extrabold text-white'>
+                Filling the Gap
+              </span>
+              <Sparkle fill={"#FFD37D"} width={64} height={64} />
             </div>
           </div>
-          
           {/* Second marquee - moving left to right */}
-          <div className="relative whitespace-nowrap overflow-hidden bg-yellow-mango text-black font-bold">
-            <div className="inline-block animate-marquee-reverse">
-              <div className='flex items-center gap-8 py-6'>
-                <span className='text-3xl font-extrabold'>Starts 1 May 2025</span>
-                <Sparkle fill={"#3658D3"} />
-                <span className='text-3xl font-extrabold'>6 weeks duration</span>
-                <Sparkle fill={"#3658D3"} />
-              </div>
-            </div>
-            <div className="inline-block animate-marquee-reverse absolute top-0 right-[100%]">
-              <div className='flex items-center gap-8 py-6'>
-                <span className='text-3xl font-extrabold'>Starts 1 May 2025</span>
-                <Sparkle fill={"#3658D3"} />
-                <span className='text-3xl font-extrabold'>6 weeks duration</span>
-                <Sparkle fill={"#3658D3"} />
-              </div>
+          <div className='flex whitespace-nowrap animate-marquee-reverse bg-yellow-mango text-black font-bold'>
+            <div className='flex items-center gap-8 py-6'>
+              <span className='text-3xl font-extrabold'>Starts 1 May 2025</span>
+              <Sparkle fill={"#3658D3"} />
+              <span className='text-3xl font-extrabold'>6 weeks duration</span>
+              <Sparkle fill={"#3658D3"} />
+              <span className='text-3xl font-extrabold'>Starts 1 May 2025</span>
+              <Sparkle fill={"#3658D3"} />
+              <span className='text-3xl font-extrabold'>
+                6 weeks duration
+              </span>
+              <Sparkle fill={"#3658D3"} />
             </div>
           </div>
         </div>
