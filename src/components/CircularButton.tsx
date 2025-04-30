@@ -4,21 +4,47 @@ import React from 'react';
 type CircularButtonProps = {
   variant?: 'yellow' | 'blue';
   foreground?: 'white' | 'black';
+  size?: 'sm' | 'md' | 'lg';
 };
 
-const CircularButton: React.FC<CircularButtonProps> = ({ variant = 'yellow', foreground = 'black' }) => {
+const CircularButton: React.FC<CircularButtonProps> = ({ 
+  variant = 'yellow', 
+  foreground = 'black',
+  size = 'md' 
+}) => {
   const bgColorClass = variant === 'blue' 
     ? "bg-[#3658D3] hover:bg-[#3658D3]/90" 
     : "bg-[#FFD37D] hover:bg-[#FFD37D]/90";
     
   const textColorClass = foreground === 'white' ? 'text-white' : 'text-black';
+  
+  // Size classes for the main container
+  const sizeClasses = {
+    sm: 'w-20 h-20',
+    md: 'w-32 h-32',
+    lg: 'w-40 h-40',
+  }[size];
+  
+  // Size classes for the SVG icon
+  const iconSizeClasses = {
+    sm: 'w-5 h-5',
+    md: 'w-7 h-7',
+    lg: 'w-9 h-9',
+  }[size];
+  
+  // Font size classes for the text
+  const textSizeClasses = {
+    sm: 'text-[10px]',
+    md: 'text-[12px]',
+    lg: 'text-[14px]',
+  }[size];
 
   return (
-    <div className="group relative w-32 h-32 cursor-pointer">
+    <div className={`group relative ${sizeClasses} cursor-pointer`}>
       <div className={`absolute inset-0 ${bgColorClass} transition-colors rounded-full`}>
         {/* Center Icon */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <svg width="28" height="28" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg" className={textColorClass}>
+          <svg width="28" height="28" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg" className={`${textColorClass} ${iconSizeClasses}`}>
             <g clipPath="url(#clip0_179_329)">
               <path d="M6.6084 24.5003H12.5723" stroke="currentColor" strokeWidth="2.38554" strokeLinecap="round" strokeLinejoin="round"/>
               <path d="M24.5 6.60876V12.5726" stroke="currentColor" strokeWidth="2.38554" strokeLinecap="round" strokeLinejoin="round"/>
@@ -39,7 +65,7 @@ const CircularButton: React.FC<CircularButtonProps> = ({ variant = 'yellow', for
         <svg className={`absolute inset-0 w-full h-full ${textColorClass}`} viewBox="0 0 100 100">
           {/* Updated path with larger radius (from 32 to 34) to position text */}
           <path id="curve" fill="none" d="M 50,50 m -34,0 a 34,34 0 1,1 68,0 a 34,34 0 1,1 -68,0" />
-          <text className={`text-[12px] uppercase font-mono tracking-[1px] fill-current`}>
+          <text className={`${textSizeClasses} uppercase font-mono tracking-[1px] fill-current`}>
             <textPath href="#curve" startOffset="5%">
               Enroll Now • Enroll Now •
             </textPath>
