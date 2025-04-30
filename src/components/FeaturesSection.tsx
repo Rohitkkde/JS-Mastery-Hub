@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect, useState } from "react"
 import { Card } from "./ui/card"
 import AngularBracket from "./icons/AngularBracket"
@@ -89,11 +88,11 @@ const FeaturesSection = () => {
       className='bg-black min-h-[300vh] relative overflow-hidden'
       style={{ position: 'relative' }}
     >
-      <div className='sticky top-0 h-screen flex items-center justify-center overflow-hidden'>
+      <div className='sticky top-0 h-screen flex items-center overflow-hidden'>
         <animated.div
           ref={contentRef}
           style={{ x }}
-          className='flex items-center gap-8 px-16 py-28 w-[300%] absolute left-1/2 transform -translate-x-1/2'
+          className='flex items-center gap-8 px-16 py-28 w-[300%]'
         >
           {/* Title */}
           <div className='min-w-[700px] text-white'>
