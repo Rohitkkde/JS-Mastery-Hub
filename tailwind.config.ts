@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -37,12 +38,12 @@ export default {
       },
       keyframes: {
         marquee: {
-          '0%': { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(-50%)' },
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' },
         },
         'marquee-reverse': {
-          '0%': { transform: 'translateX(-50%)' },
-          '100%': { transform: 'translateX(0%)' },
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(100%)' },
         },
         carousel: {
           from: { transform: 'translateX(0)' },
@@ -50,8 +51,8 @@ export default {
         },
       },
       animation: {
-        marquee: 'marquee 20s linear infinite',
-        'marquee-reverse': 'marquee-reverse 20s linear infinite',
+        marquee: 'marquee 25s linear infinite',
+        'marquee-reverse': 'marquee-reverse 25s linear infinite',
         'carousel': 'carousel 40s linear infinite',
       },
     },
