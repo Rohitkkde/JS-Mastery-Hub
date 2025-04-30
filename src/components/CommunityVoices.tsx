@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Carousel,
   CarouselContent,
@@ -29,6 +29,8 @@ const testimonials = [
 ];
 
 const CommunityVoices = () => {
+  const [isPaused, setIsPaused] = useState(false);
+
   return (
     <section className="py-24 overflow-hidden">
       <div className="container mx-auto mb-16">
@@ -47,15 +49,26 @@ const CommunityVoices = () => {
           }}
           className="w-full"
         >
-          <CarouselContent className="flex animate-carousel">
+          <CarouselContent className={`flex ${isPaused ? 'pause' : 'animate-carousel'}`}>
             {[...testimonials, ...testimonials].map((testimonial, index) => (
-              <CarouselItem key={index} className="md:w-[500px] h-full pl-8 group hover:pause">
-                <div className={`${testimonial.bgColor} p-12 rounded-3xl min-h-[250px] hover:pause`}>
+              <CarouselItem 
+                key={index} 
+                className="md:w-[500px] h-full pl-8"
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+              >
+                <div 
+                  className={`${testimonial.bgColor} p-12 rounded-3xl min-h-[250px]`}
+                >
                   <blockquote className="text-xl font-medium">
                     {testimonial.text}
                   </blockquote>
                 </div>
-                <div className="flex items-center gap-4 mt-6 mb-8 hover:pause">
+                <div 
+                  className="flex items-center gap-4 mt-6 mb-8"
+                  onMouseEnter={() => setIsPaused(true)}
+                  onMouseLeave={() => setIsPaused(false)}
+                >
                   <Avatar>
                     <AvatarFallback className="bg-black/10">
                       JS

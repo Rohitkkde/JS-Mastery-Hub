@@ -62,7 +62,7 @@ export default {
     function({ addUtilities }) {
       addUtilities({
         '.pause': {
-          'animation-play-state': 'paused',
+          'animation-play-state': 'paused !important',
         }
       })
     }
