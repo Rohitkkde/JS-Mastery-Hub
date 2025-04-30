@@ -49,15 +49,13 @@ const CommunityVoices = () => {
         >
           <CarouselContent className="flex animate-carousel">
             {[...testimonials, ...testimonials].map((testimonial, index) => (
-              <div key={index} className="flex flex-col items-center h-full hover:pause">
-                <CarouselItem className="md:w-[500px] h-full pl-8">
-                  <div className={`${testimonial.bgColor} p-12 rounded-3xl min-h-[250px]`}>
-                    <blockquote className="text-xl font-medium">
-                      {testimonial.text}
-                    </blockquote>
-                  </div>
-                </CarouselItem>
-                <div className="flex items-center gap-4 mt-6 mb-8">
+              <CarouselItem key={index} className="md:w-[500px] h-full pl-8 group hover:pause">
+                <div className={`${testimonial.bgColor} p-12 rounded-3xl min-h-[250px] hover:pause`}>
+                  <blockquote className="text-xl font-medium">
+                    {testimonial.text}
+                  </blockquote>
+                </div>
+                <div className="flex items-center gap-4 mt-6 mb-8 hover:pause">
                   <Avatar>
                     <AvatarFallback className="bg-black/10">
                       JS
@@ -68,7 +66,7 @@ const CommunityVoices = () => {
                     <p className="text-xs font-mono">{testimonial.role}</p>
                   </div>
                 </div>
-              </div>
+              </CarouselItem>
             ))}
           </CarouselContent>
         </Carousel>
