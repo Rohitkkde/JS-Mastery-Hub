@@ -1,3 +1,4 @@
+
 import React, { useRef } from "react"
 import { Card } from "./ui/card"
 import AngularBracket from "./icons/AngularBracket"
@@ -95,8 +96,8 @@ const FeaturesSection = () => {
                 {/* Top Row */}
                 <div className='relative'>
                   <img
-                    src='/lovable-uploads/07d84dbe-195e-401b-8452-d75a59ced836.png'
-                    alt='Community member'
+                    src="/lovable-uploads/dde4d0d8-ac1a-4071-b2cc-037a902d456f.png"
+                    alt="Community member"
                     className='w-16 h-16 rounded-full object-cover'
                   />
                   <div className='absolute inset-0 flex items-center justify-center'>
@@ -108,8 +109,8 @@ const FeaturesSection = () => {
                 </div>
                 <div className='relative'>
                   <img
-                    src='/lovable-uploads/07d84dbe-195e-401b-8452-d75a59ced836.png'
-                    alt='Community member'
+                    src="/lovable-uploads/dde4d0d8-ac1a-4071-b2cc-037a902d456f.png"
+                    alt="Community member"
                     className='w-16 h-16 rounded-full object-cover'
                   />
                   <div className='absolute inset-0 flex items-center justify-center'>
@@ -133,8 +134,8 @@ const FeaturesSection = () => {
                 {/* Bottom Row */}
                 <div className='relative'>
                   <img
-                    src='/lovable-uploads/07d84dbe-195e-401b-8452-d75a59ced836.png'
-                    alt='Community member'
+                    src="/lovable-uploads/dde4d0d8-ac1a-4071-b2cc-037a902d456f.png"
+                    alt="Community member"
                     className='w-16 h-16 rounded-full object-cover'
                   />
                   <div className='absolute inset-0 flex items-center justify-center'>
@@ -146,8 +147,8 @@ const FeaturesSection = () => {
                 </div>
                 <div className='relative'>
                   <img
-                    src='/lovable-uploads/07d84dbe-195e-401b-8452-d75a59ced836.png'
-                    alt='Community member'
+                    src="/lovable-uploads/dde4d0d8-ac1a-4071-b2cc-037a902d456f.png"
+                    alt="Community member"
                     className='w-16 h-16 rounded-full object-cover'
                   />
                   <div className='absolute inset-0 flex items-center justify-center'>
