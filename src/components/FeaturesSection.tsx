@@ -10,11 +10,9 @@ import CircularButton from "./CircularButton"
 const FeaturesSection = () => {
   // Define a set of colors from our theme that work well for pills
   const pillColors = [
-    "bg-blue-light/80",
-    "bg-yellow-mango/80",
-    "bg-orange/80",
-    "bg-blue-dark/80",
-    "bg-yellow-lemon/80",
+    "bg-blue-light",
+    "bg-yellow-mango",
+    "bg-[#77C6B3]"
   ]
 
   // Function to get a random color from our array
@@ -57,7 +55,7 @@ const FeaturesSection = () => {
             </h2>
           </div>
           {/* Feature Cards */}
-          <Card className='h-[70vh] w-[60vh] p-16 bg-[#212121] text-white border-none rounded-xl'>
+          <Card className='h-[70vh] w-[60vh] p-16 bg-[#212121] text-white border-none rounded-xl flex flex-col gap-3'>
             <h3 className='text-4xl font-bold mb-4'>Exclusive Content</h3>
             <p className='text-gray-300 text-xl font-medium'>
               Gain access to exclusive video tutorials structured into various
@@ -76,7 +74,7 @@ const FeaturesSection = () => {
               ].map((tag) => (
                 <span
                   key={tag}
-                  className={`px-3 py-1 rounded-full text-sm text-black font-medium ${getRandomColor()}`}
+                  className={`px-3 py-1 rounded-lg text-md text-black font-medium ${getRandomColor()}`}
                 >
                   {tag}
                 </span>
@@ -84,7 +82,7 @@ const FeaturesSection = () => {
             </div>
           </Card>
 
-          <Card className='h-[70vh] w-[60vh] p-16 bg-[#212121] text-white border-none rounded-xl'>
+          <Card className='h-[70vh] w-[60vh] p-16 bg-[#212121] text-white border-none rounded-xl flex flex-col gap-3'>
             <h3 className='text-4xl font-bold mb-4'>Private Community</h3>
             <p className='text-gray-300 text-xl font-medium'>
               Join a supportive and interactive community of fellow JavaScript
@@ -92,74 +90,62 @@ const FeaturesSection = () => {
             </p>
             <div className='mt-6 relative w-full flex items-center justify-center'>
               {/* 3x3 Grid with Discord in center and alternating images/sparkles */}
-              <div className='relative w-60 h-60 grid grid-cols-3 gap-2'>
+              <div className='relative w-60 h-60 grid grid-cols-3 '>
                 {/* Top Row */}
                 <div className='relative'>
                   <img
                     src="/lovable-uploads/dde4d0d8-ac1a-4071-b2cc-037a902d456f.png"
                     alt="Community member"
-                    className='w-16 h-16 rounded-full object-cover'
+                    className='w-20 h-20 rounded-full object-cover'
                   />
-                  <div className='absolute inset-0 flex items-center justify-center'>
-                    <div className='w-full h-full rounded-full overflow-hidden border-2 border-[#212121]' />
-                  </div>
                 </div>
                 <div className='flex items-center justify-center'>
-                  <Sparkle fill='#FFD37D' width={56} height={56} />
+                  <Sparkle fill='#FFD37D' width={75} height={75} />
                 </div>
                 <div className='relative'>
                   <img
-                    src="/lovable-uploads/dde4d0d8-ac1a-4071-b2cc-037a902d456f.png"
+                    src="/lovable-uploads/community-member-2.png"
                     alt="Community member"
-                    className='w-16 h-16 rounded-full object-cover'
+                    className='w-20 h-20 rounded-full object-cover'
                   />
-                  <div className='absolute inset-0 flex items-center justify-center'>
-                    <div className='w-full h-full rounded-full overflow-hidden border-2 border-[#212121]' />
-                  </div>
                 </div>
 
                 {/* Middle Row */}
                 <div className='flex items-center justify-center'>
-                  <Sparkle fill='#FFD37D' width={56} height={56} />
+                  <Sparkle fill='#FFD37D' width={75} height={75} />
                 </div>
                 <div className='flex items-center justify-center'>
                   <div className='relative w-20 h-20 rounded-full bg-[#5865F2] flex items-center justify-center'>
-                    <DiscordIcon className='text-white w-10 h-10' />
+                    <DiscordIcon className='text-white w-20 h-20' />
                   </div>
                 </div>
                 <div className='flex items-center justify-center'>
-                  <Sparkle fill='#FFD37D' width={56} height={56} />
+                  <Sparkle fill='#FFD37D' width={75} height={75} />
                 </div>
 
                 {/* Bottom Row */}
                 <div className='relative'>
                   <img
-                    src="/lovable-uploads/dde4d0d8-ac1a-4071-b2cc-037a902d456f.png"
+                    src="/lovable-uploads/community-member-3.png"
                     alt="Community member"
-                    className='w-16 h-16 rounded-full object-cover'
+                    className='w-20 h-20 rounded-full object-cover'
                   />
-                  <div className='absolute inset-0 flex items-center justify-center'>
-                    <div className='w-full h-full rounded-full overflow-hidden border-2 border-[#212121]' />
-                  </div>
                 </div>
                 <div className='flex items-center justify-center'>
-                  <Sparkle fill='#FFD37D' width={56} height={56} />
+                  <Sparkle fill='#FFD37D' width={75} height={75} />
                 </div>
                 <div className='relative'>
                   <img
-                    src="/lovable-uploads/dde4d0d8-ac1a-4071-b2cc-037a902d456f.png"
+                    src="/lovable-uploads/community-member-4.png"
                     alt="Community member"
-                    className='w-16 h-16 rounded-full object-cover'
+                    className='w-20 h-20 rounded-full object-cover'
                   />
-                  <div className='absolute inset-0 flex items-center justify-center'>
-                    <div className='w-full h-full rounded-full overflow-hidden border-2 border-[#212121]' />
-                  </div>
                 </div>
               </div>
             </div>
           </Card>
 
-          <Card className='h-[70vh] w-[60vh] p-16 bg-[#212121] text-white border-none rounded-xl'>
+          <Card className='h-[70vh] w-[60vh] p-16 bg-[#212121] text-white border-none rounded-xl flex flex-col gap-3'>
             <h3 className='text-4xl font-bold mb-4'>Weekly Quizzes & Gifts</h3>
             <p className='text-gray-300 mb-8 text-xl font-medium'>
               Weekly quizzes to earn exclusive rewards and gifts to celebrate
