@@ -10,7 +10,7 @@ const MentorSection = () => {
           {/* Video Side */}
           <div className="relative group cursor-pointer h-full">
             <img
-              src="/lovable-uploads/601b047f-7866-49f5-80f1-22a730dc534f.png"
+              src="/lovable-uploads/93446ac5-10f8-4090-a12c-686faf87c339.png"
               alt="Urvashi's Testimonial"
               className="w-full h-full object-cover rounded-bl-[100px]"
             />
