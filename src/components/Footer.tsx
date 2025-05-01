@@ -1,6 +1,6 @@
-
 import React from "react"
 import { Link } from "react-router-dom"
+import Marquee from "react-fast-marquee"
 import Sparkle from "./icons/Sparkle"
 
 const Footer = () => {
@@ -73,40 +73,34 @@ const Footer = () => {
       <div className='bg-black'>
         <div className='relative overflow-hidden'>
           {/* First marquee - moving right to left */}
-          <div className='flex whitespace-nowrap animate-marquee'>
-            <div className='flex items-center gap-8 py-12 text-8xl'>
-              <span className='font-extrabold text-white'>
+          <Marquee speed={40} gradient={false}>
+            <div className='flex items-center gap-8 py-12'>
+              <span className='font-extrabold text-8xl text-white'>
                 JavaScript Mastery
               </span>
               <Sparkle fill={"#FFD37D"} width={64} height={64} />
-              <span className='font-extrabold text-white'>
-                Filling the Gap
-              </span>
-              <Sparkle fill={"#FFD37D"} width={64} height={64} />
-              <span className='font-extrabold text-white'>
-                JavaScript Mastery
-              </span>
-              <Sparkle fill={"#FFD37D"} width={64} height={64} />
-              <span className='font-extrabold text-white'>
+              <span className='font-extrabold text-8xl text-white'>
                 Filling the Gap
               </span>
               <Sparkle fill={"#FFD37D"} width={64} height={64} />
             </div>
-          </div>
+          </Marquee>
           {/* Second marquee - moving left to right */}
-          <div className='flex whitespace-nowrap animate-marquee-reverse bg-yellow-mango text-black font-bold'>
-            <div className='flex items-center gap-8 py-6'>
-              <span className='text-3xl font-extrabold'>Starts 1 May 2025</span>
-              <Sparkle fill={"#3658D3"} />
-              <span className='text-3xl font-extrabold'>6 weeks duration</span>
-              <Sparkle fill={"#3658D3"} />
-              <span className='text-3xl font-extrabold'>Starts 1 May 2025</span>
-              <Sparkle fill={"#3658D3"} />
-              <span className='text-3xl font-extrabold'>
-                6 weeks duration
-              </span>
-              <Sparkle fill={"#3658D3"} />
-            </div>
+          <div className='bg-yellow-mango text-black font-bold'>
+            <Marquee direction="right" speed={30} gradient={false}>
+              <div className='flex items-center gap-8 py-6'>
+                <span className='text-3xl font-extrabold'>Starts 1 May 2025</span>
+                <Sparkle fill={"#3658D3"} />
+                <span className='text-3xl font-extrabold'>6 weeks duration</span>
+                <Sparkle fill={"#3658D3"} />
+                <span className='text-3xl font-extrabold'>Starts 1 May 2025</span>
+                <Sparkle fill={"#3658D3"} />
+                <span className='text-3xl font-extrabold'>
+                  6 weeks duration
+                </span>
+                <Sparkle fill={"#3658D3"} />
+              </div>
+            </Marquee>
           </div>
         </div>
       </div>
