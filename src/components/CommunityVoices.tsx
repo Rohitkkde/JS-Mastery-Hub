@@ -1,10 +1,6 @@
 
 import React, { useState } from "react"
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel"
+import Marquee from "react-fast-marquee"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 
 const testimonials = [
@@ -26,10 +22,16 @@ const testimonials = [
     role: "DATA SCIENTIST",
     bgColor: "bg-[#3658D3]",
   },
+  {
+    text: "The JavaScript Bootcamp exceeded all my expectations. It's perfect for anyone looking to level up their coding skills quickly!",
+    course: "React Fundamentals",
+    role: "FRONTEND DEVELOPER",
+    bgColor: "bg-[#F57642]",
+  },
 ]
 
 const CommunityVoices = () => {
-  const [isPaused, setIsPaused] = useState(false)
+  const [isPaused, setIsPaused] = useState(false);
 
   return (
     <section className='py-24 overflow-hidden'>
@@ -42,52 +44,41 @@ const CommunityVoices = () => {
       </div>
 
       <div className='relative'>
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-            dragFree: true,
-            containScroll: false,
-          }}
-          className='w-full'
+        <Marquee
+          speed={40}
+          pauseOnHover={true}
+          gradient={false}
+          play={!isPaused}
         >
-          <CarouselContent
-            className={`flex animate-carousel ${isPaused ? "pause" : ""}`}
-          >
-            {[...testimonials, ...testimonials].map((testimonial, index) => (
-              <CarouselItem 
-                key={index} 
-                className='!w-[220px] max-w-[220px] flex-none h-full pl-8'
-                style={{ width: '220px', flexBasis: '220px' }}
+          {testimonials.map((testimonial, index) => (
+            <div 
+              key={index} 
+              className="mr-8"
+              style={{ width: '220px', flexShrink: 0 }}
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+            >
+              <div
+                className={`${testimonial.bgColor} p-12 rounded-3xl min-h-[250px]`}
               >
-                <div
-                  className={`${testimonial.bgColor} p-12 rounded-3xl min-h-[250px]`}
-                  onMouseEnter={() => setIsPaused(true)}
-                  onMouseLeave={() => setIsPaused(false)}
-                >
-                  <blockquote className='text-xl font-medium'>
-                    {testimonial.text}
-                  </blockquote>
+                <blockquote className='text-xl font-medium'>
+                  {testimonial.text}
+                </blockquote>
+              </div>
+              <div className='flex items-center gap-4 mt-6 mb-8'>
+                <Avatar>
+                  <AvatarFallback className='bg-black/10'>JS</AvatarFallback>
+                </Avatar>
+                <div>
+                  <h4 className='font-bold text-lg mb-1'>
+                    {testimonial.course}
+                  </h4>
+                  <p className='text-xs font-mono'>{testimonial.role}</p>
                 </div>
-                <div
-                  className='flex items-center gap-4 mt-6 mb-8'
-                  onMouseEnter={() => setIsPaused(true)}
-                  onMouseLeave={() => setIsPaused(false)}
-                >
-                  <Avatar>
-                    <AvatarFallback className='bg-black/10'>JS</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <h4 className='font-bold text-lg mb-1'>
-                      {testimonial.course}
-                    </h4>
-                    <p className='text-xs font-mono'>{testimonial.role}</p>
-                  </div>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
+              </div>
+            </div>
+          ))}
+        </Marquee>
       </div>
     </section>
   )
