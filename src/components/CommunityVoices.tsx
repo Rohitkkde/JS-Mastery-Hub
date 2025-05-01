@@ -1,4 +1,3 @@
-
 import React, { useState } from "react"
 import Marquee from "react-fast-marquee"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
@@ -31,8 +30,6 @@ const testimonials = [
 ]
 
 const CommunityVoices = () => {
-  const [isPaused, setIsPaused] = useState(false);
-
   return (
     <section className='py-24 overflow-hidden'>
       <div className='container mx-auto mb-16'>
@@ -43,25 +40,15 @@ const CommunityVoices = () => {
         </h2>
       </div>
 
-      <div className='relative'>
-        <Marquee
-          speed={40}
-          pauseOnHover={true}
-          gradient={false}
-          play={!isPaused}
-        >
+      <div className='relative h-full'>
+        <Marquee speed={20} pauseOnHover={true} gradient={false} autoFill>
           {testimonials.map((testimonial, index) => (
-            <div 
-              key={index} 
-              className="mr-8"
-              style={{ width: '220px', flexShrink: 0 }}
-              onMouseEnter={() => setIsPaused(true)}
-              onMouseLeave={() => setIsPaused(false)}
+            <div
+              key={index}
+              className='mr-8 grid grid-rows-[4fr_1fr] w-[400px] justify-between h-full'
             >
-              <div
-                className={`${testimonial.bgColor} p-12 rounded-3xl min-h-[250px]`}
-              >
-                <blockquote className='text-xl font-medium'>
+              <div className={`${testimonial.bgColor} p-12 rounded-3xl`}>
+                <blockquote className='text-2xl font-medium'>
                   {testimonial.text}
                 </blockquote>
               </div>
