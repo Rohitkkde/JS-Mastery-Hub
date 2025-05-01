@@ -5,7 +5,7 @@ import Sparkle from "./icons/Sparkle"
 const MarqueeBanner = () => {
   // Create content for marquees
   const orangeContent = (
-    <div className='flex items-center font-bold text-4xl text-white'>
+    <div className='flex items-center font-bold text-xl lg:text-4xl text-white'>
       <span className='inline-block mx-4'>Starts 1 May 2025</span>
       <span className='inline-block mx-4 w-[38px] h-[38px]'>
         <Sparkle />
@@ -17,7 +17,7 @@ const MarqueeBanner = () => {
     </div>
   )
   const blackContent = (
-    <div className='flex items-center font-bold text-4xl text-white'>
+    <div className='flex items-center font-bold text-xl lg:text-4xl text-white'>
       <span className='inline-block mx-4'>Lifetime access</span>
       <span className='inline-block mx-4 w-[38px] h-[38px]'>
         <Sparkle />
@@ -27,7 +27,7 @@ const MarqueeBanner = () => {
   return (
     <div className='relative'>
       {/* First banner - clockwise rotation */}
-      <div className='w-[150%] -left-[25%] bg-[#F57642] overflow-hidden py-8 absolute -top-24 rotate-[9deg] z-10'>
+      <div className='w-[150%] -left-[25%] bg-[#F57642] overflow-hidden py-4 lg:py-8 absolute -top-24 rotate-[12deg] lg: lg:rotate-[9deg] z-10'>
         <Marquee
           direction='right'
           speed={40}
@@ -40,7 +40,7 @@ const MarqueeBanner = () => {
       </div>
 
       {/* Second banner - anti-clockwise rotation */}
-      <div className='w-[150%] -left-[25%] bg-black bg-opacity-100 overflow-hidden py-8 absolute -top-24 -rotate-[9deg] z-0'>
+      <div className='w-[150%] -left-[25%] bg-black bg-opacity-100 overflow-hidden py-4 lg:py-8 absolute -top-24 -rotate-[12deg] lg:-rotate-[9deg] z-0'>
         <Marquee
           direction='left'
           speed={40}

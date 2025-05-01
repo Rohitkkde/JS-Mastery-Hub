@@ -92,7 +92,7 @@ const Footer = () => {
                 height={64}
                 className='mx-4'
               />
-              <span className='font-extrabold text-8xl text-white mx-4'>
+              <span className='font-extrabold text-6xl lg:text-8xl text-white mx-4'>
                 Filling the Gap
               </span>
               <Sparkle
@@ -106,12 +106,12 @@ const Footer = () => {
           {/* Second marquee - moving left to right */}
           <div className='bg-yellow-mango text-black font-bold'>
             <Marquee direction='right' speed={30} gradient={false} autoFill pauseOnHover>
-              <div className='flex items-center py-6'>
-                <span className='text-3xl font-extrabold mx-4'>
+              <div className='flex items-center py-3 lg:py-6'>
+                <span className='text-2xl lg:text-3xl font-extrabold mx-4'>
                   Starts 1 May 2025
                 </span>
                 <Sparkle fill={"#3658D3"} className="mx-4" />
-                <span className='text-3xl font-extrabold mx-4'>
+                <span className='text-2xl lg:text-3xl font-extrabold mx-4'>
                   6 weeks duration
                 </span>
                 <Sparkle fill={"#3658D3"} className="mx-4" />

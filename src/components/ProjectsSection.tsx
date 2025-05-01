@@ -129,7 +129,7 @@ const ProjectsSection = () => {
           <span className='text-lg font-mono mb-4 block text-white/70'>
             HANDS-ON
           </span>
-          <h2 className='text-9xl font-bold'>PROJECTS</h2>
+          <h2 className='text-6xl lg:text-9xl font-bold'>PROJECTS</h2>
 
           {/* Adding a marquee banner here */}
           <div className="mt-8 overflow-hidden">

@@ -32,8 +32,8 @@ const testimonials = [
 const CommunityVoices = () => {
   return (
     <section className='py-24 overflow-hidden'>
-      <div className='container mx-auto mb-16'>
-        <h2 className='text-8xl leading-none font-bold text-black mb-8'>
+      <div className='container mx-auto mb-16 h-full'>
+        <h2 className='text-6xl lg:text-8xl leading-none font-bold text-black mb-8'>
           Community
           <br />
           Voices
@@ -41,14 +41,14 @@ const CommunityVoices = () => {
       </div>
 
       <div className='relative h-full'>
-        <Marquee speed={20} pauseOnHover={true} gradient={false} autoFill>
+        <Marquee speed={20} pauseOnHover={true} >
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className='mr-8 grid grid-rows-[4fr_1fr] w-[400px] justify-between h-full'
+              className='mr-8 grid grid-rows-[4fr_1fr] w-[300px] lg:w-[400px] h-full'
             >
-              <div className={`${testimonial.bgColor} p-12 rounded-3xl`}>
-                <blockquote className='text-2xl font-medium'>
+              <div className={`${testimonial.bgColor} p-12 rounded-3xl h-full`}>
+                <blockquote className='text-xl lg:text-2xl font-medium'>
                   {testimonial.text}
                 </blockquote>
               </div>

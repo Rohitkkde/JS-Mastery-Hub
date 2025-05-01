@@ -48,7 +48,7 @@ const FeaturesSection = () => {
             <span className='inline-block text-orange font-bold text-9xl rotate-[30deg]'>
               <AngularBracket />
             </span>
-            <h2 className='text-9xl font-bold leading-tight'>
+            <h2 className='text-7xl lg:text-9xl font-bold leading-tight'>
               What's in
               <br />
               the box?
