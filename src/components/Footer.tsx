@@ -9,7 +9,9 @@ const Footer = () => {
       <div className='container mx-auto py-16 font-mono'>
         <nav className='grid grid-cols-2 md:grid-cols-4 gap-8 mb-16'>
           <div>
-            <h3 className='font-sans font-bold text-sm mb-4 text-zinc-500'>COURSE</h3>
+            <h3 className='font-sans font-bold text-sm mb-4 text-zinc-500'>
+              COURSE
+            </h3>
             <ul className='space-y-2'>
               <li>
                 <Link to='/' className='hover:text-blue-light'>
@@ -24,7 +26,9 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h3 className='font-sans font-bold text-sm mb-4 text-zinc-500'>ABOUT</h3>
+            <h3 className='font-sans font-bold text-sm mb-4 text-zinc-500'>
+              ABOUT
+            </h3>
             <ul className='space-y-2'>
               <li>
                 <Link to='/' className='hover:text-blue-light'>
@@ -39,7 +43,9 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h3 className='font-sans font-bold text-sm mb-4 text-zinc-500'>REVIEWS</h3>
+            <h3 className='font-sans font-bold text-sm mb-4 text-zinc-500'>
+              REVIEWS
+            </h3>
             <ul className='space-y-2'>
               <li>
                 <Link to='/' className='hover:text-blue-light'>
@@ -49,7 +55,9 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h3 className='font-sans font-bold text-sm mb-4 text-zinc-500'>LEGAL</h3>
+            <h3 className='font-sans font-bold text-sm mb-4 text-zinc-500'>
+              LEGAL
+            </h3>
             <ul className='space-y-2'>
               <li>
                 <Link to='/' className='hover:text-blue-light'>
@@ -73,32 +81,40 @@ const Footer = () => {
       <div className='bg-black'>
         <div className='relative overflow-hidden'>
           {/* First marquee - moving right to left */}
-          <Marquee speed={40} gradient={false}>
-            <div className='flex items-center gap-8 py-12'>
-              <span className='font-extrabold text-8xl text-white'>
+          <div className='py-6'>
+            <Marquee speed={40} gradient={false} autoFill pauseOnHover>
+              <span className='font-extrabold text-8xl text-white mx-4'>
                 JavaScript Mastery
               </span>
-              <Sparkle fill={"#FFD37D"} width={64} height={64} />
-              <span className='font-extrabold text-8xl text-white'>
+              <Sparkle
+                fill={"#FFD37D"}
+                width={64}
+                height={64}
+                className='mx-4'
+              />
+              <span className='font-extrabold text-8xl text-white mx-4'>
                 Filling the Gap
               </span>
-              <Sparkle fill={"#FFD37D"} width={64} height={64} />
-            </div>
-          </Marquee>
+              <Sparkle
+                fill={"#FFD37D"}
+                width={64}
+                height={64}
+                className='mx-4'
+              />
+            </Marquee>
+          </div>
           {/* Second marquee - moving left to right */}
           <div className='bg-yellow-mango text-black font-bold'>
-            <Marquee direction="right" speed={30} gradient={false}>
-              <div className='flex items-center gap-8 py-6'>
-                <span className='text-3xl font-extrabold'>Starts 1 May 2025</span>
-                <Sparkle fill={"#3658D3"} />
-                <span className='text-3xl font-extrabold'>6 weeks duration</span>
-                <Sparkle fill={"#3658D3"} />
-                <span className='text-3xl font-extrabold'>Starts 1 May 2025</span>
-                <Sparkle fill={"#3658D3"} />
-                <span className='text-3xl font-extrabold'>
+            <Marquee direction='right' speed={30} gradient={false} autoFill pauseOnHover>
+              <div className='flex items-center py-6'>
+                <span className='text-3xl font-extrabold mx-4'>
+                  Starts 1 May 2025
+                </span>
+                <Sparkle fill={"#3658D3"} className="mx-4" />
+                <span className='text-3xl font-extrabold mx-4'>
                   6 weeks duration
                 </span>
-                <Sparkle fill={"#3658D3"} />
+                <Sparkle fill={"#3658D3"} className="mx-4" />
               </div>
             </Marquee>
           </div>

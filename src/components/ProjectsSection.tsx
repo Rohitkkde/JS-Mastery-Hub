@@ -1,4 +1,3 @@
-
 import React, { useRef } from "react"
 import { Card } from "./ui/card"
 import { Chrome } from "lucide-react"
@@ -130,9 +129,9 @@ const ProjectsSection = () => {
             HANDS-ON
           </span>
           <h2 className='text-9xl font-bold'>PROJECTS</h2>
-          
+
           {/* Adding a marquee banner here */}
-          <div className="mt-8 overflow-hidden">
+          {/* <div className="mt-8 overflow-hidden">
             <Marquee gradient={false} speed={30}>
               <div className="flex items-center gap-8">
                 <span className="text-2xl font-bold text-blue-light">Real-world Applications</span>
@@ -143,7 +142,7 @@ const ProjectsSection = () => {
                 <Sparkle fill={"#70A2E1"} width={24} height={24} />
               </div>
             </Marquee>
-          </div>
+          </div> */}
         </div>
 
         <div className='sticky top-20 flex flex-col items-center min-h-[80vh] pb-32'>
