@@ -6,7 +6,7 @@ const MentorSection = () => {
   return (
     <section className="w-screen flex items-end justify-end">
       <div className="bg-[#3658D3] rounded-tl-[100px] lg:rounded-bl-[100px] lg:h-[85vh] lg:ml-24">
-        <div className="grid md:grid-cols-2 gap-10 p-8 md:p-12 h-full">
+        <div className="grid md:grid-cols-2 gap-10 p-8 md:p-12 h-full animate-slide-in-left">
           {/* Video Side */}
           <div className="relative group cursor-pointer h-full">
             <img
