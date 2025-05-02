@@ -4,7 +4,7 @@ import { Card } from "./ui/card"
 import AngularBracket from "./icons/AngularBracket"
 import Sparkle from "./icons/Sparkle"
 import DiscordIcon from "./icons/DiscordIcon"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll, useTransform, useInView } from "framer-motion"
 import CircularButton from "./CircularButton"
 
 const FeaturesSection = () => {
@@ -23,6 +23,30 @@ const FeaturesSection = () => {
 
   // References for our parallax container
   const sectionRef = useRef(null)
+  
+  // Card animation references
+  const card1Ref = useRef(null)
+  const card2Ref = useRef(null)
+  const card3Ref = useRef(null)
+  
+  // Use InView hooks for each card
+  const isCard1InView = useInView(card1Ref, { once: true, amount: 0.3 })
+  const isCard2InView = useInView(card2Ref, { once: true, amount: 0.3 })
+  const isCard3InView = useInView(card3Ref, { once: true, amount: 0.3 })
+
+  // Card animation variants
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.95 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1,
+      transition: { 
+        duration: 0.8,
+        ease: [0.25, 0.1, 0.25, 1] 
+      }
+    }
+  }
 
   // Use the scroll hook from framer-motion to track scroll position
   const { scrollYProgress } = useScroll({
@@ -55,7 +79,13 @@ const FeaturesSection = () => {
             </h2>
           </div>
           {/* Feature Cards */}
-          <Card className='h-[70vh] w-[60vh] p-16 bg-[#212121] text-white border-none rounded-xl flex flex-col gap-3'>
+          <motion.div
+            ref={card1Ref}
+            variants={cardVariants}
+            initial="hidden"
+            animate={isCard1InView ? "visible" : "hidden"}
+            className='h-[70vh] w-[60vh] p-16 bg-[#212121] text-white border-none rounded-xl flex flex-col gap-3'
+          >
             <h3 className='text-4xl font-bold mb-4'>Exclusive Content</h3>
             <p className='text-gray-300 text-xl font-medium'>
               Gain access to exclusive video tutorials structured into various
@@ -80,9 +110,15 @@ const FeaturesSection = () => {
                 </span>
               ))}
             </div>
-          </Card>
+          </motion.div>
 
-          <Card className='h-[70vh] w-[60vh] p-16 bg-[#212121] text-white border-none rounded-xl flex flex-col gap-3'>
+          <motion.div
+            ref={card2Ref}
+            variants={cardVariants}
+            initial="hidden"
+            animate={isCard2InView ? "visible" : "hidden"}
+            className='h-[70vh] w-[60vh] p-16 bg-[#212121] text-white border-none rounded-xl flex flex-col gap-3'
+          >
             <h3 className='text-4xl font-bold mb-4'>Private Community</h3>
             <p className='text-gray-300 text-xl font-medium'>
               Join a supportive and interactive community of fellow JavaScript
@@ -143,9 +179,15 @@ const FeaturesSection = () => {
                 </div>
               </div>
             </div>
-          </Card>
+          </motion.div>
 
-          <Card className='h-[70vh] w-[60vh] p-16 bg-[#212121] text-white border-none rounded-xl flex flex-col gap-3'>
+          <motion.div
+            ref={card3Ref}
+            variants={cardVariants}
+            initial="hidden"
+            animate={isCard3InView ? "visible" : "hidden"}
+            className='h-[70vh] w-[60vh] p-16 bg-[#212121] text-white border-none rounded-xl flex flex-col gap-3'
+          >
             <h3 className='text-4xl font-bold mb-4'>Weekly Quizzes & Gifts</h3>
             <p className='text-gray-300 mb-8 text-xl font-medium'>
               Weekly quizzes to earn exclusive rewards and gifts to celebrate
@@ -232,7 +274,7 @@ const FeaturesSection = () => {
                 </defs>
               </svg>
             </div>
-          </Card>
+          </motion.div>
 
           <CircularButton variant='blue' foreground='white' size="lg" />
         </motion.div>
