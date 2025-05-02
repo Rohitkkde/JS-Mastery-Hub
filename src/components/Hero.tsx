@@ -29,6 +29,29 @@ const Hero = () => {
     }
   };
 
+  // Create a ref and inView state for the image
+  const imageRef = useRef(null);
+  const isImageInView = useInView(imageRef, {
+    once: true,
+    amount: 0.5
+  });
+
+  // Animation variants for the image
+  const imageVariants = {
+    hidden: {
+      opacity: 0,
+      scale: 0.8,
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.7,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
     <div className='relative min-h-screen pt-20 overflow-hidden'>
       <div className='container mx-auto px-4'>
@@ -65,7 +88,13 @@ const Hero = () => {
         </motion.h1>
 
         <div className='relative mb-20'>
-          <div className='mx-auto w-64 h-64 lg:w-52 lg:h-52 md:w-64 md:h-64 relative'>
+          <motion.div 
+            ref={imageRef}
+            variants={imageVariants}
+            initial="hidden"
+            animate={isImageInView ? "visible" : "hidden"}
+            className='mx-auto w-64 h-64 lg:w-52 lg:h-52 md:w-64 md:h-64 relative'
+          >
             <img
               src='/lovable-uploads/fd62cf28-89ed-4091-9d2c-177436cf58c8.png'
               alt='JavaScript Logo'
@@ -74,7 +103,7 @@ const Hero = () => {
             <div className='absolute -top-6 -right-6 animate-float'>
               <CircularButton variant='blue' foreground='white' />
             </div>
-          </div>
+          </motion.div>
         </div>
 
         <div className='relative'>
