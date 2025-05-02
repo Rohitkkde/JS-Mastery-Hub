@@ -28,7 +28,7 @@ const CustomCursor = () => {
   return (
     <motion.div
       ref={cursorRef}
-      className="fixed pointer-events-none z-50 w-8 h-8 -ml-4 -mt-4 rounded-full overflow-hidden border-2 border-blue-dark"
+      className="fixed pointer-events-none z-50 w-8 h-8 -ml-4 -mt-4"
       style={{ 
         x: springX,
         y: springY,
