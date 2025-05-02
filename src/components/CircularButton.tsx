@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { motion } from 'framer-motion';
 
 type CircularButtonProps = {
   variant?: 'yellow' | 'blue';
@@ -39,8 +40,35 @@ const CircularButton: React.FC<CircularButtonProps> = ({
     lg: 'text-[14px]',
   }[size];
 
+  // Animation variants for pop-in effect
+  const popInVariants = {
+    hidden: { 
+      scale: 0,
+      opacity: 0,
+      rotate: -90
+    },
+    visible: { 
+      scale: 1,
+      opacity: 1,
+      rotate: 0,
+      transition: {
+        type: "spring",
+        stiffness: 260,
+        damping: 20,
+        duration: 0.7
+      }
+    }
+  };
+
   return (
-    <div className={`group relative ${sizeClasses} cursor-pointer`}>
+    <motion.div 
+      initial="hidden"
+      animate="visible"
+      variants={popInVariants}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className={`group relative ${sizeClasses} cursor-pointer`}
+    >
       <div className={`absolute inset-0 ${bgColorClass} transition-colors rounded-full`}>
         {/* Center Icon */}
         <div className="absolute inset-0 flex items-center justify-center">
@@ -72,7 +100,7 @@ const CircularButton: React.FC<CircularButtonProps> = ({
           </text>
         </svg>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
