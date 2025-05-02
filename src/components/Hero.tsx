@@ -26,8 +26,8 @@ const Hero = () => {
                 fill='#F7DF1E'
                 stroke='#F7DF1E'
                 strokeWidth='2'
-                strokeDasharray='2000'
-                strokeDashoffset='2000'
+                strokeDasharray='200'
+                strokeDashoffset='200'
                 className='animate-draw-path'
               />
             </svg>

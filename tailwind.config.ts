@@ -58,7 +58,7 @@ export default {
         marquee: 'marquee 20s linear infinite',
         'marquee-reverse': 'marquee-reverse 20s linear infinite',
         'carousel': 'carousel 40s linear infinite',
-        'draw-path': 'draw-path 3s ease-in-out forwards',
+        'draw-path': 'draw-path 3s ease-in-out forwards infinite',
       },
     },
   },
