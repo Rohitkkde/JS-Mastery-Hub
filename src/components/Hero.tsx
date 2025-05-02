@@ -1,15 +1,44 @@
 
-import React from "react"
+import React, { useRef } from "react"
 import CircularButton from "./CircularButton"
 import MarqueeBanner from "./MarqueeBanner"
 import Sparkle from "./icons/Sparkle"
 import AngularBracket from "./icons/AngularBracket"
+import { motion, useInView } from "framer-motion"
 
 const Hero = () => {
+  const headingRef = useRef(null);
+  const isHeadingInView = useInView(headingRef, { 
+    once: true, 
+    amount: 0.3
+  });
+
+  // Animation variants for the heading
+  const headingVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 50 
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
     <div className='relative min-h-screen pt-20 overflow-hidden'>
       <div className='container mx-auto px-4'>
-        <h1 className='text-6xl lg:text-8xl font-bold mx-auto text-center lg:mt-20 mb-12'>
+        <motion.h1 
+          ref={headingRef}
+          className='text-6xl lg:text-8xl font-bold mx-auto text-center lg:mt-20 mb-12'
+          variants={headingVariants}
+          initial="hidden"
+          animate={isHeadingInView ? "visible" : "hidden"}
+        >
           Master{" "}
           <span className='relative inline-block'>
             JavaScript
@@ -33,7 +62,7 @@ const Hero = () => {
             </svg>
           </span>{" "}
           From Scratch to Expert
-        </h1>
+        </motion.h1>
 
         <div className='relative mb-20'>
           <div className='mx-auto w-64 h-64 lg:w-52 lg:h-52 md:w-64 md:h-64 relative'>
