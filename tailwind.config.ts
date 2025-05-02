@@ -53,12 +53,17 @@ export default {
           '0%': { strokeDashoffset: '2000' },
           '100%': { strokeDashoffset: '0' }
         },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
       },
       animation: {
         marquee: 'marquee 20s linear infinite',
         'marquee-reverse': 'marquee-reverse 20s linear infinite',
         'carousel': 'carousel 40s linear infinite',
         'draw-path': 'draw-path 3s ease-in-out forwards infinite',
+        'float': 'float 3s ease-in-out infinite',
       },
     },
   },
