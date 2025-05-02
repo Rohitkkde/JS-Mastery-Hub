@@ -1,21 +1,19 @@
 
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { motion, useSpring } from "framer-motion";
 
 const CustomCursor = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   
   // Using springs for smooth following with lerp-like behavior
   const springX = useSpring(0, { damping: 15, stiffness: 150 });
   const springY = useSpring(0, { damping: 15, stiffness: 150 });
 
   useEffect(() => {
-    // Hide the default cursor
-    document.body.style.cursor = "none";
+    // Don't hide the default cursor
+    // document.body.style.cursor = "none"; - removed
     
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
       springX.set(e.clientX);
       springY.set(e.clientY);
     };
@@ -23,8 +21,6 @@ const CustomCursor = () => {
     window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
-      // Restore default cursor on unmount
-      document.body.style.cursor = "auto";
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
@@ -32,7 +28,7 @@ const CustomCursor = () => {
   return (
     <motion.div
       ref={cursorRef}
-      className="fixed pointer-events-none z-50 w-8 h-8 -ml-4 -mt-4"
+      className="fixed pointer-events-none z-50 w-8 h-8 -ml-4 -mt-4 rounded-full overflow-hidden border-2 border-blue-dark"
       style={{ 
         x: springX,
         y: springY,
