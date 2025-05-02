@@ -52,23 +52,13 @@ export default {
         'draw-path': {
           '0%': { strokeDashoffset: '2000' },
           '100%': { strokeDashoffset: '0' }
-        },
-        'fade-in': {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' }
-        },
-        'fade-in-delayed': {
-          '0%, 50%': { opacity: '0' },
-          '100%': { opacity: '0.7' }
         }
       },
       animation: {
         marquee: 'marquee 20s linear infinite',
         'marquee-reverse': 'marquee-reverse 20s linear infinite',
         'carousel': 'carousel 40s linear infinite',
-        'draw-path': 'draw-path 3s ease-in-out forwards',
-        'fade-in': 'fade-in 1s ease-out forwards',
-        'fade-in-delayed': 'fade-in-delayed 4s ease-out forwards'
+        'draw-path': 'draw-path 3s ease-in-out forwards'
       },
     },
   },
