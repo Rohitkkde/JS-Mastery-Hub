@@ -37,6 +37,10 @@ const FeaturesSection = () => {
   const isCard3InView = useInView(card3Ref, { once: true, amount: 0.3 })
   const isGridInView = useInView(communityGridRef, { once: true, amount: 0.3 })
 
+  // New ref for quiz options
+  const quizOptionsRef = useRef(null)
+  const isQuizOptionsInView = useInView(quizOptionsRef, { once: true, amount: 0.3 })
+
   // Card animation variants
   const cardVariants = {
     hidden: { opacity: 0, y: 50, scale: 0.95 },
@@ -76,6 +80,20 @@ const FeaturesSection = () => {
         ease: "easeOut"
       }
     }
+  }
+
+  // Quiz option animation variants
+  const quizOptionVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: (i) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: i * 0.15,
+        duration: 0.6,
+        ease: [0.25, 0.1, 0.25, 1]
+      }
+    })
   }
 
   // Use the scroll hook from framer-motion to track scroll position
@@ -230,18 +248,39 @@ const FeaturesSection = () => {
               your progress.
             </p>
             <div className='relative'>
-              {/* Option Bars */}
-              <div className='space-y-3 font-medium text-lg'>
-                <div className='bg-[#70A2E1] text-black px-6 py-3 rounded-lg w-3/4'>
+              {/* Option Bars - now animated */}
+              <motion.div 
+                ref={quizOptionsRef}
+                className='space-y-3 font-medium text-lg'
+              >
+                <motion.div 
+                  custom={0}
+                  variants={quizOptionVariants}
+                  initial="hidden"
+                  animate={isQuizOptionsInView ? "visible" : "hidden"}
+                  className='bg-[#70A2E1] text-black px-6 py-3 rounded-lg w-3/4'
+                >
                   Option A
-                </div>
-                <div className='bg-[#FFBABA] text-black px-6 py-3 rounded-lg w-3/4'>
+                </motion.div>
+                <motion.div 
+                  custom={1}
+                  variants={quizOptionVariants}
+                  initial="hidden"
+                  animate={isQuizOptionsInView ? "visible" : "hidden"}
+                  className='bg-[#FFBABA] text-black px-6 py-3 rounded-lg w-3/4'
+                >
                   Option B
-                </div>
-                <div className='bg-[#FFD37D] text-black px-6 py-3 rounded-lg w-3/4'>
+                </motion.div>
+                <motion.div 
+                  custom={2}
+                  variants={quizOptionVariants}
+                  initial="hidden"
+                  animate={isQuizOptionsInView ? "visible" : "hidden"}
+                  className='bg-[#FFD37D] text-black px-6 py-3 rounded-lg w-3/4'
+                >
                   Option C
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
 
               {/* SVG Gift Badge */}
               <svg
