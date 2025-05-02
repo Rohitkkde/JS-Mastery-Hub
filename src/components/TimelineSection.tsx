@@ -1,4 +1,3 @@
-
 import React, { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 
@@ -94,20 +93,9 @@ const weeklyData = [
 ]
 
 const TimelineSection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const sectionRef = useRef(null);
   
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { 
-      opacity: 1,
-      transition: { 
-        staggerChildren: 0.2,
-        duration: 0.5
-      }
-    }
-  };
-  
+  // Card animation variants
   const weekVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { 
@@ -120,7 +108,7 @@ const TimelineSection = () => {
     }
   };
 
-  // New tag animation variants
+  // Tag animation variants
   const tagContainerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -147,66 +135,76 @@ const TimelineSection = () => {
   };
 
   return (
-    <section className='py-20 px-8 w-full' ref={ref}>
+    <section className='py-20 px-8 w-full' ref={sectionRef}>
       <div className='w-full flex flex-col items-center justify-between'>
         <motion.h2 
           className='text-6xl lg:text-8xl font-bold mb-20'
           initial={{ opacity: 0, y: -30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.7 }}
         >
           Your Learning Journey
         </motion.h2>
 
-        <motion.div 
-          className='w-full flex justify-center'
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
+        <div className='w-full flex justify-center'>
           {/* Timeline Items */}
           <div className='lg:w-[60vw] grid lg:grid-cols-[1fr_4fr]'>
-            {weeklyData.map((week, index) => (
-              <React.Fragment key={week.week}>
-                <motion.div 
-                  className='border-r-2 lg:pr-8 relative lg:border-blue-dark'
-                  variants={weekVariants}
-                >
-                  {/* Week Card */}
-                  <div className='text-6xl lg:text-4xl font-bold mb-4 mt-4 lg:mt-16 text-center'>
-                    Week {week.week}
-                  </div>
-                  {/* Timeline Dot */}
-                  <div className='hidden lg:block absolute top-16 right-0 w-6 h-6 translate-x-1/2 rounded-full bg-[#F7DF1E] border-4 border-[#3658D3]' />
-                </motion.div>
+            {weeklyData.map((week, index) => {
+              // Create individual ref for each timeline card
+              const cardRef = useRef(null);
+              const isCardInView = useInView(cardRef, { once: true, amount: 0.3 });
 
-                <motion.div
-                  className={`lg:mx-8 mb-8 p-8 lg:p-16 rounded-xl w-full`}
-                  style={{ backgroundColor: week.bgColor }}
-                  variants={weekVariants}
-                >
-                  <h3 className='text-4xl font-bold mb-8'>{week.title}</h3>
-
-                  {/* Topics - Now with container animation */}
+              return (
+                <React.Fragment key={week.week}>
                   <motion.div 
-                    className='flex flex-wrap gap-2'
-                    variants={tagContainerVariants}
+                    ref={cardRef}
+                    className='border-r-2 lg:pr-8 relative lg:border-blue-dark'
+                    variants={weekVariants}
+                    initial="hidden"
+                    animate={isCardInView ? "visible" : "hidden"}
                   >
-                    {week.topics.map((topic, i) => (
-                      <motion.span
-                        key={i}
-                        variants={tagVariants}
-                        className='px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm'
-                      >
-                        {topic}
-                      </motion.span>
-                    ))}
+                    {/* Week Card */}
+                    <div className='text-6xl lg:text-4xl font-bold mb-4 mt-4 lg:mt-16 text-center'>
+                      Week {week.week}
+                    </div>
+                    {/* Timeline Dot */}
+                    <div className='hidden lg:block absolute top-16 right-0 w-6 h-6 translate-x-1/2 rounded-full bg-[#F7DF1E] border-4 border-[#3658D3]' />
                   </motion.div>
-                </motion.div>
-              </React.Fragment>
-            ))}
+
+                  <motion.div
+                    ref={cardRef}
+                    className={`lg:mx-8 mb-8 p-8 lg:p-16 rounded-xl w-full`}
+                    style={{ backgroundColor: week.bgColor }}
+                    variants={weekVariants}
+                    initial="hidden"
+                    animate={isCardInView ? "visible" : "hidden"}
+                  >
+                    <h3 className='text-4xl font-bold mb-8'>{week.title}</h3>
+
+                    {/* Topics with container animation */}
+                    <motion.div 
+                      className='flex flex-wrap gap-2'
+                      variants={tagContainerVariants}
+                      initial="hidden"
+                      animate={isCardInView ? "visible" : "hidden"}
+                    >
+                      {week.topics.map((topic, i) => (
+                        <motion.span
+                          key={i}
+                          variants={tagVariants}
+                          className='px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm'
+                        >
+                          {topic}
+                        </motion.span>
+                      ))}
+                    </motion.div>
+                  </motion.div>
+                </React.Fragment>
+              );
+            })}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )
