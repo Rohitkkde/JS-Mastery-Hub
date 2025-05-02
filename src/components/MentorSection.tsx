@@ -1,14 +1,44 @@
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { Button } from './ui/button';
+import { motion, useInView } from 'framer-motion';
 
 const MentorSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  
+  const containerVariants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { 
+        duration: 0.8,
+        ease: "easeOut",
+        staggerChildren: 0.2
+      }
+    }
+  };
+  
+  const childVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0 }
+  };
+  
   return (
-    <section className="w-screen flex items-end justify-end">
+    <section className="w-screen flex items-end justify-end" ref={ref}>
       <div className="bg-[#3658D3] rounded-tl-[100px] lg:rounded-bl-[100px] lg:h-[85vh] lg:ml-24">
-        <div className="grid md:grid-cols-2 gap-10 p-8 md:p-12 h-full animate-slide-in-left">
+        <motion.div 
+          className="grid md:grid-cols-2 gap-10 p-8 md:p-12 h-full"
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={containerVariants}
+        >
           {/* Video Side */}
-          <div className="relative group cursor-pointer h-full">
+          <motion.div 
+            className="relative group cursor-pointer h-full"
+            variants={childVariants}
+          >
             <img
               src="/lovable-uploads/93446ac5-10f8-4090-a12c-686faf87c339.png"
               alt="Urvashi's Testimonial"
@@ -31,23 +61,41 @@ const MentorSection = () => {
                 />
               </svg>
             </div>
-          </div>
+          </motion.div>
 
           {/* Content Side */}
-          <div className="text-[#EBEEFB] flex flex-col justify-center">
-            <p className="font-thin text-5xl mb-2">Meet</p>
-            <h2 className="text-7xl lg:text-9xl font-bold mb-6">Urvashi</h2>
-            <blockquote className="text-2xl mb-8 opacity-90">
-              "A community of excellent JavaScript developers. A community of excellent JavaScript developers. A community of excellent JavaScript developers"
-            </blockquote>
-            <Button
-              className="bg-white text-[#3658D3] hover:bg-white/90 w-fit"
-              size="lg"
+          <motion.div 
+            className="text-[#EBEEFB] flex flex-col justify-center"
+            variants={childVariants}
+          >
+            <motion.p 
+              className="font-thin text-5xl mb-2"
+              variants={childVariants}
             >
-              ENROLL NOW
-            </Button>
-          </div>
-        </div>
+              Meet
+            </motion.p>
+            <motion.h2 
+              className="text-7xl lg:text-9xl font-bold mb-6"
+              variants={childVariants}
+            >
+              Urvashi
+            </motion.h2>
+            <motion.blockquote 
+              className="text-2xl mb-8 opacity-90"
+              variants={childVariants}
+            >
+              "A community of excellent JavaScript developers. A community of excellent JavaScript developers. A community of excellent JavaScript developers"
+            </motion.blockquote>
+            <motion.div variants={childVariants}>
+              <Button
+                className="bg-white text-[#3658D3] hover:bg-white/90 w-fit"
+                size="lg"
+              >
+                ENROLL NOW
+              </Button>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
