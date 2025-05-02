@@ -1,4 +1,3 @@
-
 import React, { useRef } from "react"
 import { Card } from "./ui/card"
 import AngularBracket from "./icons/AngularBracket"
@@ -29,10 +28,14 @@ const FeaturesSection = () => {
   const card2Ref = useRef(null)
   const card3Ref = useRef(null)
   
+  // Grid animation reference
+  const communityGridRef = useRef(null)
+  
   // Use InView hooks for each card
   const isCard1InView = useInView(card1Ref, { once: true, amount: 0.3 })
   const isCard2InView = useInView(card2Ref, { once: true, amount: 0.3 })
   const isCard3InView = useInView(card3Ref, { once: true, amount: 0.3 })
+  const isGridInView = useInView(communityGridRef, { once: true, amount: 0.3 })
 
   // Card animation variants
   const cardVariants = {
@@ -44,6 +47,33 @@ const FeaturesSection = () => {
       transition: { 
         duration: 0.8,
         ease: [0.25, 0.1, 0.25, 1] 
+      }
+    }
+  }
+  
+  // Grid container animation variants
+  const gridContainerVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+        staggerChildren: 0.1,
+      }
+    }
+  }
+  
+  // Grid item animation variants
+  const gridItemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
       }
     }
   }
@@ -126,58 +156,64 @@ const FeaturesSection = () => {
             </p>
             <div className='mt-6 relative w-full flex items-center justify-center'>
               {/* 3x3 Grid with Discord in center and alternating images/sparkles */}
-              <div className='relative w-60 h-60 grid grid-cols-3 '>
+              <motion.div 
+                ref={communityGridRef}
+                variants={gridContainerVariants}
+                initial="hidden"
+                animate={isGridInView ? "visible" : "hidden"}
+                className='relative w-60 h-60 grid grid-cols-3'
+              >
                 {/* Top Row */}
-                <div className='relative'>
+                <motion.div variants={gridItemVariants} className='relative'>
                   <img
                     src="/lovable-uploads/dde4d0d8-ac1a-4071-b2cc-037a902d456f.png"
                     alt="Community member"
                     className='w-20 h-20 rounded-full object-cover'
                   />
-                </div>
-                <div className='flex items-center justify-center'>
+                </motion.div>
+                <motion.div variants={gridItemVariants} className='flex items-center justify-center'>
                   <Sparkle fill='#FFD37D' width={75} height={75} />
-                </div>
-                <div className='relative'>
+                </motion.div>
+                <motion.div variants={gridItemVariants} className='relative'>
                   <img
                     src="/lovable-uploads/community-member-2.png"
                     alt="Community member"
                     className='w-20 h-20 rounded-full object-cover'
                   />
-                </div>
+                </motion.div>
 
                 {/* Middle Row */}
-                <div className='flex items-center justify-center'>
+                <motion.div variants={gridItemVariants} className='flex items-center justify-center'>
                   <Sparkle fill='#FFD37D' width={75} height={75} />
-                </div>
-                <div className='flex items-center justify-center'>
+                </motion.div>
+                <motion.div variants={gridItemVariants} className='flex items-center justify-center'>
                   <div className='relative w-20 h-20 rounded-full bg-[#5865F2] flex items-center justify-center'>
                     <DiscordIcon className='text-white w-20 h-20' />
                   </div>
-                </div>
-                <div className='flex items-center justify-center'>
+                </motion.div>
+                <motion.div variants={gridItemVariants} className='flex items-center justify-center'>
                   <Sparkle fill='#FFD37D' width={75} height={75} />
-                </div>
+                </motion.div>
 
                 {/* Bottom Row */}
-                <div className='relative'>
+                <motion.div variants={gridItemVariants} className='relative'>
                   <img
                     src="/lovable-uploads/community-member-3.png"
                     alt="Community member"
                     className='w-20 h-20 rounded-full object-cover'
                   />
-                </div>
-                <div className='flex items-center justify-center'>
+                </motion.div>
+                <motion.div variants={gridItemVariants} className='flex items-center justify-center'>
                   <Sparkle fill='#FFD37D' width={75} height={75} />
-                </div>
-                <div className='relative'>
+                </motion.div>
+                <motion.div variants={gridItemVariants} className='relative'>
                   <img
                     src="/lovable-uploads/community-member-4.png"
                     alt="Community member"
                     className='w-20 h-20 rounded-full object-cover'
                   />
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </div>
           </motion.div>
 
