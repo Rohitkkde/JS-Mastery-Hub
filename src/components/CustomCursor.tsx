@@ -5,9 +5,9 @@ import { motion, useSpring } from "framer-motion";
 const CustomCursor = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
   
-  // Using springs for smooth following with lerp-like behavior
-  const springX = useSpring(0, { damping: 15, stiffness: 150 });
-  const springY = useSpring(0, { damping: 15, stiffness: 150 });
+  // Using springs with reduced stiffness and increased damping for slower following
+  const springX = useSpring(0, { damping: 25, stiffness: 80 });
+  const springY = useSpring(0, { damping: 25, stiffness: 80 });
 
   useEffect(() => {
     // Don't hide the default cursor
