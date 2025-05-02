@@ -49,16 +49,11 @@ export default {
           from: { transform: 'translateX(0)' },
           to: { transform: 'translateX(calc(-100% - 1rem))' },
         },
-        'draw-path': {
-          '0%': { strokeDashoffset: '2000' },
-          '100%': { strokeDashoffset: '0' }
-        }
       },
       animation: {
         marquee: 'marquee 20s linear infinite',
         'marquee-reverse': 'marquee-reverse 20s linear infinite',
         'carousel': 'carousel 40s linear infinite',
-        'draw-path': 'draw-path 3s ease-in-out forwards'
       },
     },
   },
