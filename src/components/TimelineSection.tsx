@@ -120,6 +120,32 @@ const TimelineSection = () => {
     }
   };
 
+  // New tag animation variants
+  const tagContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.2,
+        staggerChildren: 0.05
+      }
+    }
+  };
+
+  const tagVariants = {
+    hidden: { opacity: 0, scale: 0.8, y: 10 },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      y: 0,
+      transition: { 
+        type: "spring",
+        stiffness: 200,
+        damping: 15
+      }
+    }
+  };
+
   return (
     <section className='py-20 px-8 w-full' ref={ref}>
       <div className='w-full flex flex-col items-center justify-between'>
@@ -161,20 +187,21 @@ const TimelineSection = () => {
                 >
                   <h3 className='text-4xl font-bold mb-8'>{week.title}</h3>
 
-                  {/* Topics */}
-                  <div className='flex flex-wrap gap-2'>
+                  {/* Topics - Now with container animation */}
+                  <motion.div 
+                    className='flex flex-wrap gap-2'
+                    variants={tagContainerVariants}
+                  >
                     {week.topics.map((topic, i) => (
                       <motion.span
                         key={i}
+                        variants={tagVariants}
                         className='px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm'
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-                        transition={{ delay: 0.3 + (i * 0.05), duration: 0.4 }}
                       >
                         {topic}
                       </motion.span>
                     ))}
-                  </div>
+                  </motion.div>
                 </motion.div>
               </React.Fragment>
             ))}
