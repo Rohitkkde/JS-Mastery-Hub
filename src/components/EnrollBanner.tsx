@@ -8,11 +8,10 @@ const EnrollBanner = () => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
   
-  // Animation variants for slide-right bouncy effect
+  // Animation variants for slide-right bouncy effect (without fade-in)
   const containerVariants = {
-    hidden: { opacity: 0, x: -100 },
+    hidden: { x: -100 },
     visible: { 
-      opacity: 1, 
       x: 0,
       transition: { 
         type: "spring",
