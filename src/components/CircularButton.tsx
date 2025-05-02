@@ -1,6 +1,6 @@
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 type CircularButtonProps = {
   variant?: 'yellow' | 'blue';
@@ -13,6 +13,10 @@ const CircularButton: React.FC<CircularButtonProps> = ({
   foreground = 'black',
   size = 'md' 
 }) => {
+  // Reference for the animation trigger
+  const buttonRef = useRef(null);
+  const isInView = useInView(buttonRef, { once: true, amount: 0.3 });
+  
   const bgColorClass = variant === 'blue' 
     ? "bg-[#3658D3] hover:bg-[#3658D3]/90" 
     : "bg-[#FFD37D] hover:bg-[#FFD37D]/90";
@@ -62,8 +66,9 @@ const CircularButton: React.FC<CircularButtonProps> = ({
 
   return (
     <motion.div 
+      ref={buttonRef}
       initial="hidden"
-      animate="visible"
+      animate={isInView ? "visible" : "hidden"}
       variants={popInVariants}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
