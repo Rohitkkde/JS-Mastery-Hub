@@ -1,4 +1,6 @@
-import React from "react"
+
+import React, { useRef } from "react"
+import { motion, useInView } from "framer-motion"
 
 const weeklyData = [
   {
@@ -92,47 +94,92 @@ const weeklyData = [
 ]
 
 const TimelineSection = () => {
-  return (
-    <section className='py-20 px-8 w-full'>
-      <div className='w-full flex flex-col items-center justify-between'>
-        <h2 className='text-6xl lg:text-8xl font-bold mb-20'>Your Learning Journey</h2>
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { 
+        staggerChildren: 0.2,
+        duration: 0.5
+      }
+    }
+  };
+  
+  const weekVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
 
-        <div className='w-full flex justify-center'>
+  return (
+    <section className='py-20 px-8 w-full' ref={ref}>
+      <div className='w-full flex flex-col items-center justify-between'>
+        <motion.h2 
+          className='text-6xl lg:text-8xl font-bold mb-20'
+          initial={{ opacity: 0, y: -30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -30 }}
+          transition={{ duration: 0.7 }}
+        >
+          Your Learning Journey
+        </motion.h2>
+
+        <motion.div 
+          className='w-full flex justify-center'
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
           {/* Timeline Items */}
           <div className='lg:w-[60vw] grid lg:grid-cols-[1fr_4fr]'>
             {weeklyData.map((week, index) => (
-              <>
-                <div className='border-r-2 lg:pr-8 relative lg:border-blue-dark'>
+              <React.Fragment key={week.week}>
+                <motion.div 
+                  className='border-r-2 lg:pr-8 relative lg:border-blue-dark'
+                  variants={weekVariants}
+                >
                   {/* Week Card */}
                   <div className='text-6xl lg:text-4xl font-bold mb-4 mt-4 lg:mt-16 text-center'>
                     Week {week.week}
                   </div>
                   {/* Timeline Dot */}
                   <div className='hidden lg:block absolute top-16 right-0 w-6 h-6 translate-x-1/2 rounded-full bg-[#F7DF1E] border-4 border-[#3658D3]' />
-                </div>
+                </motion.div>
 
-                <div
+                <motion.div
                   className={`lg:mx-8 mb-8 p-8 lg:p-16 rounded-xl w-full`}
                   style={{ backgroundColor: week.bgColor }}
+                  variants={weekVariants}
                 >
                   <h3 className='text-4xl font-bold mb-8'>{week.title}</h3>
 
                   {/* Topics */}
                   <div className='flex flex-wrap gap-2'>
                     {week.topics.map((topic, i) => (
-                      <span
+                      <motion.span
                         key={i}
                         className='px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm'
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+                        transition={{ delay: 0.3 + (i * 0.05), duration: 0.4 }}
                       >
                         {topic}
-                      </span>
+                      </motion.span>
                     ))}
                   </div>
-                </div>
-              </>
+                </motion.div>
+              </React.Fragment>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )
