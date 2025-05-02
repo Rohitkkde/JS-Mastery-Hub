@@ -41,6 +41,10 @@ const FeaturesSection = () => {
   const quizOptionsRef = useRef(null)
   const isQuizOptionsInView = useInView(quizOptionsRef, { once: true, amount: 0.3 })
 
+  // New ref for feature tags
+  const featureTagsRef = useRef(null)
+  const isFeatureTagsInView = useInView(featureTagsRef, { once: true, amount: 0.3 })
+
   // Card animation variants
   const cardVariants = {
     hidden: { opacity: 0, y: 50, scale: 0.95 },
@@ -96,6 +100,32 @@ const FeaturesSection = () => {
     })
   }
 
+  // Feature tags animation variants
+  const tagContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.2,
+        staggerChildren: 0.07
+      }
+    }
+  }
+
+  const tagVariants = {
+    hidden: { opacity: 0, y: 20, scale: 0.8 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1,
+      transition: { 
+        type: "spring",
+        stiffness: 260,
+        damping: 20
+      }
+    }
+  }
+
   // Use the scroll hook from framer-motion to track scroll position
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -141,7 +171,13 @@ const FeaturesSection = () => {
               practice questions and weekly live doubt sessions along with live
               webinars.
             </p>
-            <div className='mt-6 flex flex-wrap gap-2'>
+            <motion.div 
+              ref={featureTagsRef}
+              variants={tagContainerVariants}
+              initial="hidden"
+              animate={isFeatureTagsInView ? "visible" : "hidden"}
+              className='mt-6 flex flex-wrap gap-2'
+            >
               {[
                 "Video tutorials",
                 "Practice Questions",
@@ -150,14 +186,15 @@ const FeaturesSection = () => {
                 "Doubt Sessions",
                 "Exclusive content",
               ].map((tag) => (
-                <span
+                <motion.span
                   key={tag}
+                  variants={tagVariants}
                   className={`px-3 py-1 rounded-lg text-md text-black font-medium ${getRandomColor()}`}
                 >
                   {tag}
-                </span>
+                </motion.span>
               ))}
-            </div>
+            </motion.div>
           </motion.div>
 
           <motion.div
