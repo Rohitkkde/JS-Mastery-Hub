@@ -1,3 +1,4 @@
+
 import Navbar from "@/components/Navbar"
 import Hero from "@/components/Hero"
 import MentorSection from "@/components/MentorSection"
@@ -7,10 +8,12 @@ import ProjectsSection from "@/components/ProjectsSection"
 import CommunityVoices from "@/components/CommunityVoices"
 import EnrollBanner from "@/components/EnrollBanner"
 import Footer from "@/components/Footer"
+import OldMicrosoftCursor from "@/components/OldMicrosoftCursor"
 
 const Index = () => {
   return (
     <div className='min-h-screen relative z-10'>
+      <OldMicrosoftCursor />
       <Navbar />
       <Hero />
       <MentorSection />
