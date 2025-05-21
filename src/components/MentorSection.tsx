@@ -41,7 +41,7 @@ const MentorSection = () => {
           >
             <img
               src="/lovable-uploads/93446ac5-10f8-4090-a12c-686faf87c339.png"
-              alt="Urvashi's Testimonial"
+              alt="Rohit's Testimonial"
               className="w-full h-full object-cover rounded-tl-[100px] lg:rounded-bl-[100px]"
             />
             <div className="absolute inset-0 flex items-center justify-center">
@@ -78,7 +78,7 @@ const MentorSection = () => {
               className="text-7xl lg:text-9xl font-bold mb-6"
               variants={childVariants}
             >
-              Urvashi
+              Rohit
             </motion.h2>
             <motion.blockquote 
               className="text-2xl mb-8 opacity-90"

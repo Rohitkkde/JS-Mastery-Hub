@@ -1,3 +1,4 @@
+
 import React from "react"
 import { Link } from "react-router-dom"
 import Marquee from "react-fast-marquee"
@@ -37,7 +38,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link to='/' className='hover:text-blue-light'>
-                  MEET URVASHI
+                  MEET ROHIT
                 </Link>
               </li>
             </ul>
