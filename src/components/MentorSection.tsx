@@ -40,7 +40,7 @@ const MentorSection = () => {
             variants={childVariants}
           >
             <img
-              src="/lovable-uploads/93446ac5-10f8-4090-a12c-686faf87c339.png"
+              src="\lovable-uploads\Screenshot 2025-05-21 125715.png"
               alt="Rohit's Testimonial"
               className="w-full h-full object-cover rounded-tl-[100px] lg:rounded-bl-[100px]"
             />
