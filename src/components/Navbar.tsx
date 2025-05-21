@@ -5,7 +5,7 @@ const Navbar = () => {
     "WHATS INCLUDED",
     "THE JOURNEY",
     "PRACTICAL",
-    "MEET URVASHI",
+    "MEET ROHIT",
     "TESTIMONIALS",
   ]
 
