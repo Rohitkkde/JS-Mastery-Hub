@@ -11,12 +11,12 @@
     "isolatedModules": true,
     "moduleDetection": "force",
     "noEmit": true,
-
-    /* Linting */
+      
+    /* Linting */                 
     "strict": true,
-    "noUnusedLocals": false,
+    "noUnusedLocals": false,                     
     "noUnusedParameters": false,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true                                    
   },
-  "include": ["vite.config.ts"]
-}
+  "include": ["vite.config.ts"]                                           
+}                           
